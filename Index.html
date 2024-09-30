@@ -44,40 +44,7 @@
     </div>
   </footer>
 
-  <!-- Live Server Script for auto-reloading the page during development -->
-  <script>
-    if ('WebSocket' in window) {
-      (function () {
-        function refreshCSS() {
-          var sheets = Array.from(document.getElementsByTagName("link"));
-          var head = document.getElementsByTagName("head")[0];
-          sheets.forEach(sheet => {
-            const parent = sheet.parentElement || head;
-            parent.removeChild(sheet);
-            let url = sheet.href.replace(/(&|\?)_cacheOverride=\d+/, '');
-            sheet.href = `${url}${url.includes('?') ? '&' : '?'}_cacheOverride=${Date.now()}`;
-            parent.appendChild(sheet);
-          });
-        }
-
-        const protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
-        const address = protocol + window.location.host + window.location.pathname + '/ws';
-        const socket = new WebSocket(address);
-
-        socket.onmessage = function (msg) {
-          if (msg.data === 'reload') window.location.reload();
-          else if (msg.data === 'refreshcss') refreshCSS();
-        };
-
-        if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
-          console.log('Live reload enabled.');
-          sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
-        }
-      })();
-    } else {
-      console.error('Upgrade your browser. This Browser does not support WebSocket for Live-Reloading.');
-    }
-  </script>
+  <script src="script.js"></script>
 </body>
 
 </html>

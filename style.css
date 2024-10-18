@@ -41,17 +41,3 @@
   
   
   
-  /* Responsive layout */
-  @media (max-width: 768px) {
-    .nav-items a {
-      padding: 0 1rem;
-    }
-  
-    .hero h1 {
-      font-size: 2rem;
-    }
-  
-    .hero p {
-      font-size: 1.2rem;
-    }
-  }

@@ -15,53 +15,98 @@
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
       <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
-  <!-- Header and navigation -->
-  <header>
+      <!DOCTYPE html>
+      <html lang="en">
+      <head>
+        <header>
+          <nav class="navbar navbar-expand-sm justify-content-center bg-dark" data-bs-theme="dark">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="index.html"><b>Healthy </b><i>Futures</i></a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link" href="about_me.html">About Me!</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="learning_options.html">Learning Opportunities!</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="walk_with_me_wednesdays.html">Walk With Me Wednesdays</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link disabled" aria-disabled="true">Information</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+        </header>
+        <style>
+            .container {
+                display: grid;
+                grid-template-areas: 
+                    "alice . jimandjan"
+                    "alice picture jimandjan"
+                    "jim picture bj"
+                    "jerrelandjulie picture bj"
+                    "jerrelandjulie beth bj";
+                grid-template-columns: 1fr 2fr 1fr;
+                grid-gap: 30px;
+                padding: 15px;
+            }
+      
+            .item {
+                background: #708b75;
+                border: 5px solid black;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 0px;
+                text-align: center;
+                font-size: 18px;
+                font-weight: bold;
+            }
+      
+            .alice { grid-area: alice; }
+            .picture { grid-area: picture; }
+            .jimandjan { grid-area: jimandjan; }
+            .jim { grid-area: jim; }
+            .bj { grid-area: bj; }
+            .jerrelandjulie { grid-area: jerrelandjulie; }
+            .beth { grid-area: beth; }
 
-    <nav class="navbar navbar-expand-sm justify-content-center bg-dark" data-bs-theme="dark">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="index.html"><b>Healthy </b><i>Futures</i></a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link" href="about_me.html">About Me!</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="learning_options.html">Learning Opportunities!</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="walk_with_me_wednesdays.html">Walk With Me Wednesdays</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link disabled" aria-disabled="true">Information</a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>
-</header>
+            .hero img{
+              display: flex;
+              max-width: 100%;
+              
+            }
+        </style>
+      </head>
+      <body>
 
-
-<div class="container">
-    <!-- Stack the columns on mobile by making one full-width and the other half-width -->
-    <div class="row">
-      <div class="col-md-8"><img src="img/jim and jan.jpg"></div>
-      <div class="col-6 col-md-4"><img src="img/Jerrel and Julie.jpg"></div>
-    </div>
-  
-    <!-- Columns start at 50% wide on mobile and bump up to 33.3% wide on desktop -->
-    <div class="row">
-      <div class="col-6 col-md-4">.col-6 .col-md-4</div>
-      <div class="col-6 col-md-4">.col-6 .col-md-4</div>
-      <div class="col-6 col-md-4">.col-6 .col-md-4</div>
-    </div>
-  
-    <!-- Columns are always 50% wide, on mobile and desktop -->
-    <div class="row">
-      <div class="col-6">.col-6</div>
-      <div class="col-6">.col-6</div>
-    </div>
-  </div>
+        <section class="hero" id="hero">
+          <div class="container">
+              <div class="item alice"><img src="img/BJ.jpg"></div>
+              <div class="item picture">Your picture goes here!</div>
+              <div class="item jimandjan"><img src="img/jim and jan.jpg"></div>
+              <div class="item jim"><img src="img/jim.jpg"></div>
+              <div class="item bj"><img src="img/Alice.jpg"></div>
+              <div class="item jerrelandjulie"><img src="img/Jerrel and Julie.jpg"></div>
+              <div class="item beth"><img src="img/Beth and Jilly.jpg"></div>
+          </div>
+          <br><br><br><br><br><br><br>
+        </section>
+            <!-- Footer -->
+    <footer>
+      <div class="container">
+        <br><p>Please contact Julie Gooding for Booking<br>
+        julie7747@gmail.com
+          <br>(401)-742-4553<br>Website made by Jude Gooding
+        </p>
+      </div>
+    </footer>
+      </body>
+      </html>

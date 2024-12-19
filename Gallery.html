@@ -45,60 +45,47 @@
           </nav>
         </header>
           
-        <style>
-          .container {
-              display: grid;
-              grid-template-areas: 
-                  "alice . jimandjan"
-                  "alice picture jimandjan"
-                  "jim picture bj"
-                  "jerrelandjulie picture bj"
-                  "jerrelandjulie beth bj";
-              grid-template-columns: 1fr 2fr 1fr;
-              grid-gap: 60px;
-              padding: 15px;
-          }
-      
-          .item {
-              background: #708b75;
-              border: 5px solid black;
-              display: flex;
-              justify-content: center;
-              align-items: center;
-              padding: 0px;
-              text-align: center;
-              font-size: 18px;
-              font-weight: bold;
-          }
-      
-          .alice { grid-area: alice; }
-          .picture { grid-area: picture; }
-          .jimandjan { grid-area: jimandjan; height: 80%;}
-          .jim { grid-area: jim; height: 100%; } 
-          .bj { grid-area: bj; }
-          .jerrelandjulie { grid-area: jerrelandjulie; }
-          .beth { grid-area: beth; }
-      
-          .hero img {
-              display: flex;
-              max-width: 100%;
-              max-height: 100%;
-              min-width: 100%;
-              min-height: 100%;
-          }
-      </style>
-      
-      <section class="hero" id="hero">
+        <section class="hero" id="hero">
           <div class="container">
-              <div class="item bj"><img src="img/jim and jan.jpg"></div>
-              <div class="item picture">Your picture goes here!</div>
-              <div class="item jimandjan"><img src="img/Alice.jpg"></div>
-              <div class="item jim"><img src="img/jim.jpg"></div>
-              <div class="item alice"><img src="img/Jerrel and Julie.jpg"></div>
-              <div class="item jerrelandjulie"><img src="img/BJ.jpg"></div>
-              <div class="item beth"><img src="img/Beth and Jilly.jpg"></div>
+            <div class="hero-content">
+
+          <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="img/Alice.jpg" class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="img/BJ.jpg" class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="img/walking.jpg" class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="img/img4.jpg" class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="img/jim and jan.jpg" class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="img/1.jpg" class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="img/2.jpg" class="d-block w-100" alt="...">
+              </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+          </div>
+          </div>
           </div>
       </section>
+      
             <!-- Footer -->
     <footer>
       <div class="container">

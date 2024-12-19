@@ -46,52 +46,49 @@
         </header>
           
         <style>
-            .container {
-                display: grid;
-                grid-template-areas: 
-                    "alice . jimandjan"
-                    "alice picture jimandjan"
-                    "jim picture bj"
-                    "jerrelandjulie picture bj"
-                    "jerrelandjulie beth bj";
-                grid-template-columns: 1fr 2fr 1fr;
-                grid-gap: 60px;
-                padding: 15px;
-            }
+          .container {
+              display: grid;
+              grid-template-areas: 
+                  "alice . jimandjan"
+                  "alice picture jimandjan"
+                  "jim picture bj"
+                  "jerrelandjulie picture bj"
+                  "jerrelandjulie beth bj";
+              grid-template-columns: 1fr 2fr 1fr;
+              grid-gap: 60px;
+              padding: 15px;
+          }
       
-            .item {
-                background: #708b75;
-                border: 5px solid black;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                padding: 0px;
-                text-align: center;
-                font-size: 18px;
-                font-weight: bold;
-            }
+          .item {
+              background: #708b75;
+              border: 5px solid black;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              padding: 0px;
+              text-align: center;
+              font-size: 18px;
+              font-weight: bold;
+          }
       
-            .alice { grid-area: alice; }
-            .picture { grid-area: picture; }
-            .jimandjan { grid-area: jimandjan; }
-            .jim { grid-area: jim; }
-            .bj { grid-area: bj; }
-            .jerrelandjulie { grid-area: jerrelandjulie; }
-            .beth { grid-area: beth; }
-
-            .hero img{
+          .alice { grid-area: alice; }
+          .picture { grid-area: picture; }
+          .jimandjan { grid-area: jimandjan; height: 80%;}
+          .jim { grid-area: jim; height: 100%; } 
+          .bj { grid-area: bj; }
+          .jerrelandjulie { grid-area: jerrelandjulie; }
+          .beth { grid-area: beth; }
+      
+          .hero img {
               display: flex;
               max-width: 100%;
               max-height: 100%;
               min-width: 100%;
               min-height: 100%;
-            }
-
-        </style>
-      </head>
-      <body>
-
-        <section class="hero" id="hero">
+          }
+      </style>
+      
+      <section class="hero" id="hero">
           <div class="container">
               <div class="item bj"><img src="img/jim and jan.jpg"></div>
               <div class="item picture">Your picture goes here!</div>
@@ -101,8 +98,7 @@
               <div class="item jerrelandjulie"><img src="img/BJ.jpg"></div>
               <div class="item beth"><img src="img/Beth and Jilly.jpg"></div>
           </div>
-          
-        </section>
+      </section>
             <!-- Footer -->
     <footer>
       <div class="container">

@@ -66,10 +66,10 @@ p {
 .nav-link {
   color: #fff !important;
   font-weight: 500;
-  padding: 0.5rem 1rem !important;
+  padding: 0.5rem 0.75rem !important;
   transition: all 0.3s ease;
   border-radius: 5px;
-  margin: 0 0.25rem;
+  margin: 0 0.1rem;
 }
 
 .nav-link:hover {
@@ -90,6 +90,135 @@ p {
   color: white;
 }
 
+.home-hero {
+  min-height: calc(100vh - 82px);
+  background:
+    linear-gradient(90deg, rgba(19, 43, 27, 0.86) 0%, rgba(19, 43, 27, 0.62) 42%, rgba(19, 43, 27, 0.14) 100%),
+    url("../../img/julie-4178-home-hero.png") center center / cover no-repeat;
+  display: flex;
+  align-items: center;
+  padding: 5rem 0;
+}
+
+.home-hero-overlay {
+  width: min(680px, calc(100% - 2rem));
+  margin-left: clamp(1rem, 8vw, 8rem);
+  color: white;
+}
+
+.home-kicker {
+  color: white;
+  font-size: clamp(2rem, 5vw, 4.75rem);
+  font-weight: 800;
+  line-height: 1;
+  margin-bottom: 0.5rem;
+  text-shadow: 0 3px 12px rgba(0,0,0,0.45);
+}
+
+.home-kicker span {
+  font-style: italic;
+  font-weight: 500;
+}
+
+.home-hero h1 {
+  font-size: clamp(2.5rem, 7vw, 6rem);
+  line-height: 0.95;
+  margin-bottom: 1rem;
+  text-shadow: 0 3px 14px rgba(0,0,0,0.5);
+}
+
+.home-tagline {
+  color: rgba(255,255,255,0.95);
+  font-size: clamp(1.2rem, 2.4vw, 2rem);
+  max-width: 620px;
+  margin-bottom: 2rem;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.55);
+}
+
+.home-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.btn.home-button {
+  min-width: 210px;
+  border-radius: 999px;
+  padding: 0.85rem 1.4rem;
+  background: #f5f8ef;
+  color: #193d22;
+  border: 2px solid #f5f8ef;
+  box-shadow: 0 10px 22px rgba(0,0,0,0.22);
+}
+
+.btn.home-button:hover,
+.btn.home-button:focus {
+  background: #d9e9c7;
+  color: #193d22;
+  border-color: #d9e9c7;
+}
+
+.btn.home-button-light {
+  background: transparent;
+  color: white;
+  border-color: rgba(255,255,255,0.85);
+}
+
+.btn.home-button-light:hover,
+.btn.home-button-light:focus {
+  background: rgba(255,255,255,0.16);
+  color: white;
+  border-color: white;
+}
+
+.home-intro,
+.home-services {
+  background: #f5f8ef;
+  color: #1f3525;
+  padding: 4rem 0;
+}
+
+.home-intro h2,
+.home-intro h3,
+.home-services h2,
+.home-services h3 {
+  color: #1f3525;
+}
+
+.home-intro p,
+.home-services p {
+  color: #314536;
+}
+
+.home-intro-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(280px, 0.8fr);
+  gap: 2.5rem;
+  align-items: start;
+}
+
+.home-highlight {
+  border-left: 5px solid #4a7c59;
+  padding-left: 1.5rem;
+}
+
+.home-services {
+  background: #ffffff;
+  padding-top: 1rem;
+}
+
+.home-service-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2rem;
+  margin-top: 1.5rem;
+}
+
+.home-service-list article {
+  border-top: 4px solid #4a7c59;
+  padding-top: 1.25rem;
+}
+
 .hero h1 {
   color: white;
   margin-bottom: 2rem;
@@ -105,6 +234,10 @@ p {
   margin: 0 auto;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
   font-size: 1.2rem;
+}
+
+.page-hero {
+  min-height: auto;
 }
 
 /* Carousel Improvements */
@@ -150,7 +283,7 @@ section {
 
 /* About Me Page Specific */
 .hero-image img {
-  border-radius: 15px;
+  border-radius: 8px;
   box-shadow: 0 10px 30px rgba(0,0,0,0.2);
   max-width: 100%;
   height: auto;
@@ -173,7 +306,7 @@ section {
 .gallery-item {
   flex: 0 0 calc(33.333% - 1rem);
   max-width: 300px;
-  border-radius: 15px;
+  border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 8px 25px rgba(0,0,0,0.3);
   transition: all 0.4s ease;
@@ -221,7 +354,7 @@ section {
 /* Cards */
 .card {
   border: none;
-  border-radius: 15px;
+  border-radius: 8px;
   box-shadow: 0 5px 15px rgba(0,0,0,0.3);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   margin-bottom: 2rem;
@@ -285,6 +418,34 @@ footer p {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+  .home-hero {
+    min-height: 74vh;
+    background:
+      linear-gradient(180deg, rgba(19, 43, 27, 0.88) 0%, rgba(19, 43, 27, 0.7) 50%, rgba(19, 43, 27, 0.25) 100%),
+      url("../../img/julie-4178-home-hero.png") center center / cover no-repeat;
+    align-items: flex-start;
+    padding: 3rem 0 14rem;
+  }
+
+  .home-hero-overlay {
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .home-actions {
+    justify-content: center;
+  }
+
+  .home-intro-grid,
+  .home-service-list {
+    grid-template-columns: 1fr;
+  }
+
+  .home-intro,
+  .home-services {
+    padding: 3rem 0;
+  }
+
   .hero {
     padding: 2rem 0;
     min-height: 50vh;
@@ -342,6 +503,20 @@ footer p {
 @media (max-width: 576px) {
   .container {
     padding: 0 0.5rem;
+  }
+
+  .home-hero {
+    min-height: 70vh;
+    padding: 2rem 0 10rem;
+  }
+
+  .home-actions {
+    gap: 0.75rem;
+  }
+
+  .home-button {
+    width: min(100%, 310px);
+    min-width: 0;
   }
   
   .hero {

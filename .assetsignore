@@ -1,0 +1,16 @@
+# Files Cloudflare should NOT upload with the site.
+# (Cloudflare rejects any single file over 25 MiB.)
+
+# Repo / tooling files
+.git
+.gitignore
+.assetsignore
+.claude
+wrangler.jsonc
+node_modules
+vendor
+
+# Original full-size photos and videos. The site only uses the
+# web-optimized copies in img/web/, so skip everything else in img/.
+img/*
+!img/web/

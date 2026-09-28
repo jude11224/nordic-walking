@@ -3,146 +3,227 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Walk With Me Wednesdays - Healthy Futures: Nordic Walking</title>
-  <meta name="description" content="Join our Walk With Me Wednesdays program - 30-minute Nordic Walking sessions in various beautiful locations.">
-  
+  <title>Walk With Me Wednesdays | Healthy Futures</title>
+  <meta name="description" content="Thirty minute Nordic walks on alternate Wednesdays at 9:30 a.m. in nearby preserves and parks.">
+  <meta name="theme-color" content="#1d3527">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..700,50;1,9..144,300..700,50&display=swap" rel="stylesheet">
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <!-- Custom CSS -->
   <link rel="stylesheet" href="custom/css/style.css">
 </head>
+
 <body>
   <!-- Header and navigation -->
-  <header>
-    <nav class="navbar navbar-expand-sm justify-content-center bg-dark" data-bs-theme="dark">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="index.html"><b>Healthy </b><i>Futures</i></a>
+  <header class="site-header">
+    <nav class="navbar navbar-expand-lg site-nav">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true">
+            <circle cx="20" cy="20" r="19" fill="#c0643a"/>
+            <circle cx="20" cy="17" r="6.5" fill="#e3b879"/>
+            <path d="M3 25c5-4 9-4 13-1s9 3 12 0 7-3 9-1v4a19 19 0 0 1-34 0z" fill="#1d3527"/>
+          </svg>
+          <span>Healthy <em>Futures</em></span>
+        </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link" href="about_me.html">About Me!</a>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+          <ul class="navbar-nav align-items-lg-center">
+            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="balance_posture_gait.html">Balance, Posture, Gait</a></li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Nordic Walking<span class="caret" aria-hidden="true">&#9662;</span></a>
+              <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="nordic_walking.html">About Nordic Walking<small>Why it works &amp; the YMCA class</small></a></li>
+                  <li><a class="dropdown-item active" href="walk_with_me_wednesdays.html" aria-current="page">Walk With Me Wednesdays<small>Group walks &amp; locations</small></a></li>
+                  <li><a class="dropdown-item" href="Gallery.html">Gallery<small>Photos from our walks</small></a></li>
+                  <li><a class="dropdown-item" href="Information.html">Activator Poles<small>Poles, equipment &amp; info</small></a></li>
+              </ul>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="learning_options.html">Fitness Offerings</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="walk_with_me_wednesdays.html">Walk With Me Wednesdays</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="Information.html">Information</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="Gallery.html">Gallery</a>
-            </li>
+            <li class="nav-item"><a class="nav-link" href="learning_options.html">Offerings</a></li>
+            <li class="nav-item"><a class="nav-link" href="about_me.html">About Julie</a></li>
+            <li class="nav-item nav-cta"><a class="btn btn-terracotta btn-sm-pill" href="tel:+14017424553">Call 401.742.4553</a></li>
           </ul>
         </div>
       </div>
     </nav>
   </header>
 
-  <!-- Walk With Me Wednesdays Section -->
-  <section class="hero" id="hero">
-    <div class="container">
-      <div class="hero-content">
-        <h1><b>Walk With Me Wednesdays</b></h1>
-        <p>
-          Walk for fun and practice, with friends, and to be outdoors in nature. Thirty minute walks held at 9:30 a.m., on alternate Wednesdays, in various nearby locations.
-        </p>
-        <div class="hero-video">
-          <video class="img-fluid rounded" controls src="img/VideoForGallery.mp4" type="video/mp4"></video>
-        </div>
+  <main>
+    <section class="page-hero">
+      <div class="page-hero-bg" style="background-image: url('img/web/barn-island.jpg'); background-position: center;"></div>
+      <div class="container">
+        <span class="eyebrow">Nordic Walking</span>
+        <h1>Walk With Me <em>Wednesdays</em></h1>
+        <p class="lead">Walk for fun and practice, with friends, and to be outdoors in nature.</p>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Walking Locations -->
-  <section class="py-5">
-    <div class="container">
-      <h2 class="text-center mb-5">Our Walking Locations</h2>
-      <div class="row">
-        <!-- First Row of Cards -->
-        <div class="col-sm-12 col-md-6 col-lg-4 mb-4">
-          <div class="card">
-            <img src="img/knox.jpg" class="card-img-top" alt="Knox Preserve">
-            <div class="card-body">
-              <h5 class="card-title">Knox Preserve</h5>
-              <a href="https://avalonia.org/preserves/knox-preserve/" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Visit Website</a>
-            </div>
-          </div>
+    <section class="section">
+      <div class="container">
+        <div class="schedule-card reveal">
+          <div><small>When</small><strong>9:30 a.m.</strong></div>
+          <div><small>How often</small><strong>Alternate Wednesdays</strong></div>
+          <div><small>How long</small><strong>Thirty minutes</strong></div>
         </div>
-        <div class="col-sm-12 col-md-6 col-lg-4 mb-4">
-          <div class="card">
-            <img src="img/avondale.jpg" class="card-img-top" alt="Avondale Park">
-            <div class="card-body">
-              <h5 class="card-title">Avondale Park</h5>
-              <a href="https://avondalepark.org/" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Visit Website</a>
-            </div>
+        <div class="row g-5 align-items-center mt-3">
+          <div class="col-lg-5 reveal">
+            <span class="eyebrow">See it in action</span>
+            <h2>Friendly, relaxed, <em>outdoors</em></h2>
+            <p class="lead">Every walk is held at a different nearby preserve or park, so there's always something new to see.</p>
           </div>
-        </div>
-        <div class="col-sm-12 col-md-6 col-lg-4 mb-4">
-          <div class="card">
-            <img src="img/spelmanpark.jpg" class="card-img-top" alt="Spelman Park">
-            <div class="card-body">
-              <h5 class="card-title">Spellman Park</h5>
-              <a href="https://www.alltrails.com/trail/us/connecticut/spellman-recreational-park" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Visit Website</a>
-            </div>
-          </div>
-        </div>
-        
-        <!-- Second Row of Cards -->
-        <div class="col-sm-12 col-md-6 col-lg-4 mb-4">
-          <div class="card">
-            <img src="img/barne_island.jpg" class="card-img-top" alt="Barn Island">
-            <div class="card-body">
-              <h5 class="card-title">Barn Island</h5>
-              <a href="https://www.alltrails.com/trail/us/connecticut/barn-island-wildlife-management-area-trail--3" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Visit Website</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-12 col-md-6 col-lg-4 mb-4">
-          <div class="card">
-            <img src="img/Haley_farm.jpg" class="card-img-top" alt="Haley Farm">
-            <div class="card-body">
-              <h5 class="card-title">Haley Farm</h5>
-              <a href="https://www.gosaonline.org/properties/haley-farm-state-park/" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Visit Website</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-12 col-md-6 col-lg-4 mb-4">
-          <div class="card">
-            <img src="img/Barlow_preserve.jpg" class="card-img-top" alt="Barlow Preserve">
-            <div class="card-body">
-              <h5 class="card-title">Barlow Preserve</h5>
-              <a href="https://westerlylandtrust.org/portfolio/barlow-nature-preserve/" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Visit Website</a>
+          <div class="col-lg-7 reveal d1">
+            <div class="video-frame">
+              <video controls preload="metadata" poster="img/web/group-four.jpg" src="img/VideoForGallery.mp4"></video>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Walk Schedule -->
-  <section class="py-5 bg-light">
-    <div class="container">
-      <h2 class="text-center mb-4">Walk Schedule</h2>
-      <div class="ratio ratio-16x9">
-        <iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=1&ctz=America%2FNew_York&showPrint=0&src=OTlkZTBlOWI4ZjI5MjhlNjBkZmYwZGU5MDliNTQ3YzEwMDcwMTA4OWZkNzQzOWJiMDE2Y2YwZGRlYWExYWJlMEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&src=anVsaWU3NzQ3QGdtYWlsLmNvbQ&color=%237986CB&color=%23D50000" style="border:solid 1px #777" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+    <section class="section section-paper">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Our walking locations</span>
+          <h2>Where we <em>walk</em></h2>
+        </div>
+        <div class="row g-4">
+          <div class="col-sm-6 col-lg-4 reveal">
+            <a class="place" href="https://avalonia.org/preserves/knox-preserve/" target="_blank" rel="noopener noreferrer">
+              <img src="img/web/knox.jpg" alt="Knox Preserve" loading="lazy">
+              <div class="place-body">
+                <div><h3>Knox Preserve</h3><small>Stonington</small></div>
+                <span class="ext" aria-hidden="true">&#8599;</span>
+              </div>
+            </a>
+          </div>
+          <div class="col-sm-6 col-lg-4 reveal d1">
+            <a class="place" href="https://avondalepark.org/" target="_blank" rel="noopener noreferrer">
+              <img src="img/web/avondale.jpg" alt="Avondale Park" loading="lazy">
+              <div class="place-body">
+                <div><h3>Avondale Park</h3><small>Westerly</small></div>
+                <span class="ext" aria-hidden="true">&#8599;</span>
+              </div>
+            </a>
+          </div>
+          <div class="col-sm-6 col-lg-4 reveal d2">
+            <a class="place" href="https://www.alltrails.com/trail/us/connecticut/spellman-recreational-park" target="_blank" rel="noopener noreferrer">
+              <img src="img/web/spellman.jpg" alt="Spellman Park" loading="lazy">
+              <div class="place-body">
+                <div><h3>Spellman Park</h3><small>Stonington</small></div>
+                <span class="ext" aria-hidden="true">&#8599;</span>
+              </div>
+            </a>
+          </div>
+          <div class="col-sm-6 col-lg-4 reveal">
+            <a class="place" href="https://www.alltrails.com/trail/us/connecticut/barn-island-wildlife-management-area-trail--3" target="_blank" rel="noopener noreferrer">
+              <img src="img/web/barn-island.jpg" alt="Barn Island" loading="lazy">
+              <div class="place-body">
+                <div><h3>Barn Island</h3><small>Stonington</small></div>
+                <span class="ext" aria-hidden="true">&#8599;</span>
+              </div>
+            </a>
+          </div>
+          <div class="col-sm-6 col-lg-4 reveal d1">
+            <a class="place" href="https://www.gosaonline.org/properties/haley-farm-state-park/" target="_blank" rel="noopener noreferrer">
+              <img src="img/web/haley-farm.jpg" alt="Haley Farm" loading="lazy">
+              <div class="place-body">
+                <div><h3>Haley Farm</h3><small>Groton</small></div>
+                <span class="ext" aria-hidden="true">&#8599;</span>
+              </div>
+            </a>
+          </div>
+          <div class="col-sm-6 col-lg-4 reveal d2">
+            <a class="place" href="https://westerlylandtrust.org/portfolio/barlow-nature-preserve/" target="_blank" rel="noopener noreferrer">
+              <img src="img/web/barlow.jpg" alt="Barlow Preserve" loading="lazy">
+              <div class="place-body">
+                <div><h3>Barlow Preserve</h3><small>Westerly</small></div>
+                <span class="ext" aria-hidden="true">&#8599;</span>
+              </div>
+            </a>
+          </div>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Walk schedule</span>
+          <h2>Upcoming <em>walks</em></h2>
+        </div>
+        <div class="calendar-frame ratio ratio-16x9 reveal">
+          <iframe title="Walk schedule calendar" src="https://calendar.google.com/calendar/embed?height=600&amp;wkst=1&amp;ctz=America%2FNew_York&amp;showPrint=0&amp;showTitle=0&amp;src=OTlkZTBlOWI4ZjI5MjhlNjBkZmYwZGU5MDliNTQ3YzEwMDcwMTA4OWZkNzQzOWJiMDE2Y2YwZGRlYWExYWJlMEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=anVsaWU3NzQ3QGdtYWlsLmNvbQ&amp;color=%237986CB&amp;color=%23D50000"></iframe>
+        </div>
+      </div>
+    </section>
+
+    <section class="section pt-0">
+      <div class="container">
+        <div class="cta reveal">
+          <div class="row g-4 align-items-end">
+            <div class="col-lg-7">
+              <h2>Come walk with us</h2>
+              <p>Call or email Julie to book a class, ask a question, or find the next session near you.</p>
+            </div>
+            <div class="col-lg-5 text-lg-end">
+              <a class="phone" href="tel:+14017424553">401.742.4553</a><br>
+              <a class="btn btn-light-pill" href="mailto:julie7747@gmail.com">Email Julie <span class="arrow" aria-hidden="true">&rarr;</span></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
 
   <!-- Footer -->
-  <footer>
+  <footer class="site-footer">
     <div class="container">
-      <p>Please contact Julie Gooding for Booking</p>
-      <p>julie7747@gmail.com<br>(401)-742-4553<br>Website made by Jude Gooding</p>
+      <div class="row g-5">
+        <div class="col-lg-5">
+          <p class="brand">Healthy <em>Futures</em></p>
+          <p>Education and fitness for a healthy today and an independent tomorrow.</p>
+        </div>
+        <div class="col-sm-4 col-lg-2">
+          <h2>Classes</h2>
+          <ul>
+            <li><a href="balance_posture_gait.html">Balance, Posture, Gait</a></li>
+            <li><a href="nordic_walking.html">Nordic Walking</a></li>
+            <li><a href="learning_options.html">All offerings</a></li>
+          </ul>
+        </div>
+        <div class="col-sm-4 col-lg-2">
+          <h2>Explore</h2>
+          <ul>
+            <li><a href="walk_with_me_wednesdays.html">Walk With Me Wednesdays</a></li>
+            <li><a href="Gallery.html">Gallery</a></li>
+            <li><a href="about_me.html">About Julie</a></li>
+          </ul>
+        </div>
+        <div class="col-sm-4 col-lg-3">
+          <h2>Contact Julie</h2>
+          <ul>
+            <li><a href="tel:+14017424553">401.742.4553</a></li>
+            <li><a href="mailto:julie7747@gmail.com">julie7747@gmail.com</a></li>
+            <li>Stonington &amp; Westerly area</li>
+          </ul>
+        </div>
+      </div>
+      <div class="bottom">
+        <span>&copy; <span id="year">2026</span> Healthy Futures &middot; Julie Gooding</span>
+        <span>Website made by Jude Gooding</span>
+      </div>
     </div>
   </footer>
 
   <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="custom/js/site.js"></script>
 </body>
 </html>

@@ -81,6 +81,17 @@ a:hover {
   color: var(--terracotta-dark);
 }
 
+a.plain,
+.offer-row h3 a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a.plain:hover,
+.offer-row h3 a:hover {
+  color: var(--terracotta-dark);
+}
+
 :focus-visible {
   outline: 3px solid var(--terracotta);
   outline-offset: 3px;
@@ -408,7 +419,7 @@ img {
 .hero-tagline {
   font-size: clamp(1.25rem, 2.2vw, 1.6rem);
   line-height: 1.5;
-  max-width: 34ch;
+  max-width: 36ch;
   color: rgba(255, 253, 248, 0.9);
   margin-bottom: 2.5rem;
 }
@@ -640,6 +651,11 @@ img {
   margin-bottom: 1.5rem;
 }
 
+.statement.sm {
+  font-size: clamp(1.5rem, 2.6vw, 2.1rem);
+  line-height: 1.3;
+}
+
 .statement em {
   color: var(--terracotta);
 }
@@ -825,7 +841,7 @@ img {
 }
 
 .offer-row h3 {
-  margin: 0 0 0.5rem;
+  margin: 0;
 }
 
 .offer-row .when {
@@ -1324,7 +1340,7 @@ img {
 .site-footer .bottom {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: flex-end;
   gap: 1rem;
   border-top: 1px solid rgba(255, 253, 248, 0.14);
   margin-top: 3.5rem;

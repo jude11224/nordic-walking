@@ -5,6 +5,7 @@
 //
 //   GET    /api/events        public   list all events
 //   GET    /api/session       public   { owner: true|false }
+//   GET    /api/status        public   setup check (no secret values)
 //   POST   /api/login         public   { password } -> sets owner cookie
 //   POST   /api/logout        public   clears owner cookie
 //   POST   /api/events        owner    add an event
@@ -46,6 +47,15 @@ async function route(request, env, url) {
   }
   if (pathname === '/api/session' && method === 'GET') {
     return json({ owner: await isOwner(request, env) });
+  }
+  if (pathname === '/api/status' && method === 'GET') {
+    // Setup check: shows whether the password and storage are visible to this
+    // Worker, plus the names (never the values) of everything it can see.
+    return json({
+      passwordConfigured: !!env.ADMIN_PASSWORD,
+      eventsStorage: !!env.EVENTS,
+      bindingNames: Object.keys(env).sort(),
+    });
   }
 
   // Everything below changes state. Browsers send an Origin header on these

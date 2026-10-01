@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Nordic Walking | Healthy Futures</title>
-  <meta name="description" content="Healthy Futures. Education and fitness for a healthy today and an independent tomorrow.">
+  <title>Calendar | Healthy Futures</title>
+  <meta name="description" content="Walks, classes and events with Healthy Futures.">
   <meta name="theme-color" content="#12263a">
 
   <!-- Fonts -->
@@ -39,16 +39,16 @@
           <ul class="navbar-nav align-items-lg-center">
             <li class="nav-item"><a class="nav-link" href="strength_and_fitness.html">Strength and Fitness</a></li>
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Nordic Walking</a>
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Nordic Walking</a>
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item active" href="nordic_walking.html" aria-current="page">Nordic Walking</a></li>
+                <li><a class="dropdown-item" href="nordic_walking.html">Nordic Walking</a></li>
                 <li><a class="dropdown-item" href="walk_with_me_wednesdays.html">Walk With Me Wednesdays</a></li>
                 <li><a class="dropdown-item" href="Information.html">Information</a></li>
                 <li><a class="dropdown-item" href="Gallery.html">Gallery</a></li>
               </ul>
             </li>
             <li class="nav-item"><a class="nav-link" href="learning_options.html">Fitness Offerings</a></li>
-            <li class="nav-item"><a class="nav-link" href="calendar.html">Calendar</a></li>
+            <li class="nav-item"><a class="nav-link active" href="calendar.html" aria-current="page">Calendar</a></li>
             <li class="nav-item"><a class="nav-link" href="about_me.html">About Me</a></li>
             <li class="nav-item nav-cta"><a class="btn btn-accent btn-sm" href="tel:+14017424553">401.742.4553</a></li>
           </ul>
@@ -58,69 +58,17 @@
   </header>
 
   <main id="main">
-    <section class="page-header" style="--header-img: url('img/web/group-four.jpg');">
+    <section class="page-header" style="--header-img: url('img/web/shore.jpg');">
       <div class="container">
-        <h1>Nordic Walking</h1>
+        <h1>Calendar</h1>
+        <p class="lead">Walks, classes and other events.</p>
       </div>
     </section>
 
     <section class="section">
       <div class="container">
-        <div class="row g-5 align-items-center">
-          <div class="col-lg-6">
-            <p class="statement sm">Nordic walking is great because it is a total body exercise that improves posture and balance, protects knees and hips, improves cardiovascular health, burns more calories while being fun, social, and out in nature!</p>
-          </div>
-          <div class="col-lg-6">
-            <div class="framed wide"><img src="img/web/group-walk.jpg" alt="Nordic Walking group"></div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section-alt">
-      <div class="container">
-        <div class="row g-4">
-          <div class="col-md-6">
-            <div class="feature dark">
-              <h3>Nordic Walking</h3>
-              <p>Nordic Walking is a full-body exercise to improve posture, upper body strength, cardiovascular health and burn more calories than with regular walking. Learn and practice a sport enjoyed by adults around the world. Then, savor the pleasure and satisfaction of Nordic Walking for fitness, fun, balance and health. 7-week class offered through YMCA, Arcadia Branch includes training on walking local trails.</p>
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="feature">
-              <h3><a href="walk_with_me_wednesdays.html">Walk With Me Wednesdays</a></h3>
-              <p>Walk for fun and practice, with friends, and to be outdoors in nature. Thirty minute walks held at 9:30 a.m., on alternate Wednesdays, in various nearby locations.</p>
-              <a class="text-link" href="walk_with_me_wednesdays.html">Our Walking Locations &rarr;</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container">
-        <div class="row g-4">
-          <div class="col-lg-6">
-            <a class="path-card" href="Gallery.html">
-              <img src="img/web/jim-jan.jpg" alt="Jim and Jan Nordic Walking">
-              <div class="path-card-body">
-                <h3>Our Nordic Walking Gallery</h3>
-                <p>Walk for fun and practice, with friends, and to be outdoors in nature.</p>
-                <span class="go">View gallery</span>
-              </div>
-            </a>
-          </div>
-          <div class="col-lg-6">
-            <a class="path-card" href="Information.html">
-              <img src="img/web/poles.jpg" alt="Activator poles">
-              <div class="path-card-body">
-                <h3>Activator poles</h3>
-                <p>Information, articles, and research</p>
-                <span class="go">Read more</span>
-              </div>
-            </a>
-          </div>
-        </div>
+        <div id="calendar"><p class="cal-status">Loading calendar&hellip;</p></div>
+        <noscript><p>The calendar needs JavaScript. Please call <a href="tel:+14017424553">401.742.4553</a> for dates.</p></noscript>
       </div>
     </section>
 
@@ -179,5 +127,6 @@
   <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="custom/js/site.js"></script>
+  <script src="custom/js/calendar.js"></script>
 </body>
 </html>

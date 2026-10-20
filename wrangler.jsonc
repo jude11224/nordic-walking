@@ -18,12 +18,7 @@
   "kv_namespaces": [
     // The calendar events.
     { "binding": "EVENTS" },
-    // A backup copy of every registration form, in case an email goes missing.
+    // Every registration form. Email is off for now; see README to turn it on.
     { "binding": "REGISTRATIONS" }
-  ],
-  // Emails registration forms to Julie. Locked to her address, so it can't
-  // be used to email anyone else. See README for the one-time setup.
-  "send_email": [
-    { "name": "REGISTRATION_EMAIL", "destination_address": "julie7747@gmail.com" }
   ]
 }

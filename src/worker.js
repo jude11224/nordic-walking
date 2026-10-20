@@ -16,8 +16,8 @@
 // Setup (once): set the owner password as a secret named ADMIN_PASSWORD.
 //   npx wrangler secret put ADMIN_PASSWORD
 // Events are stored in the EVENTS KV namespace (created automatically on
-// deploy from wrangler.jsonc). Registrations are emailed through the
-// REGISTRATION_EMAIL binding and a backup copy is kept in REGISTRATIONS.
+// deploy from wrangler.jsonc). Registrations are kept in REGISTRATIONS, and
+// also emailed when a REGISTRATION_EMAIL binding is set (off for now, see README).
 
 const COOKIE = 'hf_owner';
 const SESSION_SECONDS = 60 * 60 * 24 * 14; // stay signed in for 14 days
@@ -298,7 +298,7 @@ async function register(request, env) {
   if (!saved && !emailed) {
     return json({ error: 'Sorry, your form could not be sent. Please call Julie at 401.742.4553.' }, 500);
   }
-  if (!emailed) console.error(`Registration ${id} was saved but not emailed`);
+  if (env.REGISTRATION_EMAIL && !emailed) console.error(`Registration ${id} was saved but not emailed`);
   return json({ ok: true });
 }
 

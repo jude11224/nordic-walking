@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Registration and Waiver | Healthy Futures</title>
+  <meta name="description" content="Healthy Futures. Education and fitness for a healthy today and an independent tomorrow.">
+  <meta name="theme-color" content="#147a4d">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="custom/css/style.css">
+</head>
+
+<body>
+  <!-- Header and navigation -->
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <nav class="navbar navbar-expand-xl site-nav" aria-label="Main">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <b>Healthy</b> Futures
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+          <ul class="navbar-nav align-items-xl-center">
+            <li class="nav-item"><a class="nav-link" href="balance_posture_gait.html">Balance, Posture, Gait</a></li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Nordic Walking</a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="nordic_walking.html">Nordic Walking</a></li>
+                <li><a class="dropdown-item" href="walk_with_me_wednesdays.html">Walk With Me Wednesdays</a></li>
+                <li><a class="dropdown-item" href="Information.html">Information</a></li>
+                <li><a class="dropdown-item" href="Gallery.html">Gallery</a></li>
+              </ul>
+            </li>
+            <li class="nav-item"><a class="nav-link" href="learning_options.html">Fitness Offerings</a></li>
+            <li class="nav-item"><a class="nav-link" href="calendar.html">Calendar</a></li>
+            <li class="nav-item"><a class="nav-link" href="about_me.html">About Me</a></li>
+            <li class="nav-item"><a class="nav-link active" href="register.html" aria-current="page">Register</a></li>
+            <li class="nav-item nav-cta"><a class="btn btn-accent btn-sm" href="tel:+14017424553">401.742.4553</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="page-header">
+      <div class="container">
+        <div class="row g-5 align-items-center">
+          <div class="col-lg-7">
+            <h1>Registration and Waiver</h1>
+            <p class="lead">Fill out this form to sign up for a class. When you press Send, it goes straight to Julie.</p>
+          </div>
+          <div class="col-lg-5 d-none d-lg-block">
+            <div class="page-photo"><img src="img/web/group-forest.jpg" alt=""></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <form class="reg-form" id="register-form" novalidate>
+          <div class="reg-card">
+            <h2>Registration</h2>
+
+            <fieldset class="field">
+              <legend>Which classes are you signing up for? <span class="req">*</span></legend>
+              <div class="choice"><input type="checkbox" id="class-bpg" name="classes" value="Balance, Posture, Gait"><label for="class-bpg">Balance, Posture, Gait</label></div>
+              <div class="choice"><input type="checkbox" id="class-nw" name="classes" value="Nordic Walking"><label for="class-nw">Nordic Walking</label></div>
+              <div class="choice"><input type="checkbox" id="class-ss" name="classes" value="Stretch and Strengthen"><label for="class-ss">Stretch and Strengthen</label></div>
+            </fieldset>
+
+            <div class="field">
+              <label for="reg-name">Full name <span class="req">*</span></label>
+              <input type="text" id="reg-name" name="name" maxlength="120" autocomplete="name" required>
+            </div>
+            <div class="field-row">
+              <div class="field">
+                <label for="reg-email">Email <span class="req">*</span></label>
+                <input type="email" id="reg-email" name="email" maxlength="200" autocomplete="email" required>
+              </div>
+              <div class="field">
+                <label for="reg-phone">Phone <span class="req">*</span></label>
+                <input type="tel" id="reg-phone" name="phone" maxlength="40" autocomplete="tel" required>
+              </div>
+            </div>
+            <div class="field">
+              <label for="reg-dob">Date of birth <span class="req">*</span></label>
+              <input type="date" id="reg-dob" name="dob" min="1900-01-01" autocomplete="bday" required>
+            </div>
+            <div class="field">
+              <label for="reg-health">Physical limitations or health issues which may affect participation <span class="opt">(optional)</span></label>
+              <textarea id="reg-health" name="health" maxlength="2000" rows="4"></textarea>
+            </div>
+
+            <!-- Leave empty. Hidden from people; spam bots fill it in. -->
+            <div class="reg-trap" aria-hidden="true">
+              <label for="reg-company">Company</label>
+              <input type="text" id="reg-company" name="company" tabindex="-1" autocomplete="off">
+            </div>
+          </div>
+
+          <div class="reg-card">
+            <h2>Waiver of Liability</h2>
+            <!-- Keep this wording in step with WAIVER in src/worker.js. -->
+            <div class="waiver">
+              <p>I <strong class="fill" data-fill="name">(your name)</strong> agree, waive, discharge, and covenant not to sue Healthy Futures and its officers and employees from any and all liability, claims, demands, actions, and causes of action whatsoever arising out of or relating to any loss, damage or injury, including death, that may be sustained by me, or to any property belonging to me, whether caused by negligence of officers or employees, while participating in Nordic Walking, Stretch and Strengthen, Balance, Posture, Gait or while in, on, or upon the premises where these classes take place or are connected to.</p>
+              <p>In signing this release, I acknowledge and represent that:</p>
+              <ul>
+                <li>I have read the foregoing release, understand it and sign it voluntarily as my own free act and intent.</li>
+                <li>I execute this release for full, adequate, and complete consideration fully intending to be bound by the same.</li>
+              </ul>
+              <p class="mb-0">I hereby set my hand and seal this <strong class="fill" data-fill="date">day of signing</strong>.</p>
+            </div>
+
+            <div class="choice agree">
+              <input type="checkbox" id="reg-agree" name="agree" required>
+              <label for="reg-agree">I have read this release, understand it and sign it voluntarily. <span class="req">*</span></label>
+            </div>
+            <div class="field">
+              <label for="reg-signature">Signature: type your full name <span class="req">*</span></label>
+              <input type="text" id="reg-signature" name="signature" class="signature" maxlength="120" autocomplete="name" required>
+            </div>
+            <p class="reg-printed">Name printed: <strong class="fill" data-fill="name">(your name)</strong></p>
+
+            <p class="form-error" id="register-error" role="alert"></p>
+            <div class="buttons">
+              <button type="submit" class="btn btn-accent">Send to Julie</button>
+            </div>
+          </div>
+        </form>
+
+        <div class="reg-card reg-done" id="register-done" tabindex="-1" hidden>
+          <h2>Thank you!</h2>
+          <p class="lead">Julie has your registration and waiver. She will be in touch soon.</p>
+          <div class="buttons">
+            <button type="button" class="btn btn-accent" id="register-print">Print a copy</button>
+          </div>
+        </div>
+
+        <p class="reg-paper">Prefer paper? <a href="registration_and_waiver.pdf" target="_blank" rel="noopener">Print the form</a> and bring it to class.</p>
+        <p class="reg-paper">Julie Gooding is available at Healthy Futures <a href="tel:+14017424553">401.742.4553</a>.</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="row g-5">
+        <div class="col-lg-6">
+          <p class="brand"><b>Healthy</b> Futures</p>
+          <p>Education and fitness for a healthy today and an independent tomorrow</p>
+        </div>
+        <div class="col-sm-6 col-lg-3">
+          <h2>Explore</h2>
+          <ul>
+            <li><a href="balance_posture_gait.html">Balance, Posture, Gait</a></li>
+            <li><a href="nordic_walking.html">Nordic Walking</a></li>
+            <li><a href="learning_options.html">Fitness Offerings</a></li>
+            <li><a href="walk_with_me_wednesdays.html">Walk With Me Wednesdays</a></li>
+            <li><a href="calendar.html">Calendar</a></li>
+            <li><a href="Gallery.html">Gallery</a></li>
+            <li><a href="about_me.html">About Me</a></li>
+            <li><a href="register.html">Register</a></li>
+          </ul>
+        </div>
+        <div class="col-sm-6 col-lg-3">
+          <h2>Please contact Julie Gooding for Booking</h2>
+          <ul>
+            <li><a href="mailto:julie7747@gmail.com">julie7747@gmail.com</a></li>
+            <li><a href="tel:+14017424553">(401)-742-4553</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="bottom">
+        <span>Website made by Jude Gooding</span>
+        <a href="calendar.html#login">Owner login</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="custom/js/site.js"></script>
+  <script src="custom/js/register.js"></script>
+</body>
+</html>

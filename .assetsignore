@@ -9,6 +9,7 @@
 wrangler.jsonc
 src
 node_modules
+.wrangler
 vendor
 
 # Original full-size photos and videos. The site only uses the

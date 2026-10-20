@@ -1,13 +1,14 @@
-// Healthy Futures — calendar API
+// Healthy Futures — calendar and registration API
 //
 // Everything except /api/* is served as static files by Cloudflare. This
-// Worker only handles the calendar:
+// Worker only handles the calendar and the registration form:
 //
 //   GET    /api/events        public   list all events
 //   GET    /api/session       public   { owner: true|false }
 //   GET    /api/status        public   setup check (no secret values)
 //   POST   /api/login         public   { password } -> sets owner cookie
 //   POST   /api/logout        public   clears owner cookie
+//   POST   /api/register      public   registration + waiver -> emailed to Julie
 //   POST   /api/events        owner    add an event
 //   PUT    /api/events/:id    owner    update an event
 //   DELETE /api/events/:id    owner    remove an event
@@ -15,12 +16,17 @@
 // Setup (once): set the owner password as a secret named ADMIN_PASSWORD.
 //   npx wrangler secret put ADMIN_PASSWORD
 // Events are stored in the EVENTS KV namespace (created automatically on
-// deploy from wrangler.jsonc).
+// deploy from wrangler.jsonc). Registrations are emailed through the
+// REGISTRATION_EMAIL binding and a backup copy is kept in REGISTRATIONS.
 
 const COOKIE = 'hf_owner';
 const SESSION_SECONDS = 60 * 60 * 24 * 14; // stay signed in for 14 days
 const EVENTS_KEY = 'events';
 const MAX_EVENTS = 1000;
+
+// Registration emails go from an address on the site's own domain to Julie.
+const REGISTRATION_FROM = 'registration@healthyfuturesnow.com';
+const REGISTRATION_TO = 'julie7747@gmail.com';
 
 const enc = new TextEncoder();
 
@@ -54,6 +60,8 @@ async function route(request, env, url) {
     return json({
       passwordConfigured: !!env.ADMIN_PASSWORD,
       eventsStorage: !!env.EVENTS,
+      registrationEmail: !!env.REGISTRATION_EMAIL,
+      registrationsStorage: !!env.REGISTRATIONS,
       bindingNames: Object.keys(env).sort(),
     });
   }
@@ -69,6 +77,7 @@ async function route(request, env, url) {
   if (pathname === '/api/logout' && method === 'POST') {
     return json({ ok: true }, 200, { 'Set-Cookie': cookie('', 0, url) });
   }
+  if (pathname === '/api/register' && method === 'POST') return register(request, env);
 
   const match = pathname.match(/^\/api\/events(?:\/([A-Za-z0-9-]{1,64}))?$/);
   if (match) {
@@ -179,6 +188,172 @@ async function readJson(request) {
   } catch {
     return null;
   }
+}
+
+/* ---------- registration and waiver ---------- */
+
+const CLASSES = ['Balance, Posture, Gait', 'Nordic Walking', 'Stretch and Strengthen'];
+const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+const MONTH_NAMES = ['January', 'February', 'March', 'April', 'May', 'June', 'July',
+  'August', 'September', 'October', 'November', 'December'];
+
+// Keep this wording in step with the waiver shown in register.html.
+const WAIVER = [
+  'I {name} agree, waive, discharge, and covenant not to sue Healthy Futures and its officers and employees from any and all liability, claims, demands, actions, and causes of action whatsoever arising out of or relating to any loss, damage or injury, including death, that may be sustained by me, or to any property belonging to me, whether caused by negligence of officers or employees, while participating in Nordic Walking, Stretch and Strengthen, Balance, Posture, Gait or while in, on, or upon the premises where these classes take place or are connected to.',
+  'In signing this release, I acknowledge and represent that:',
+  '- I have read the foregoing release, understand it and sign it voluntarily as my own free act and intent.',
+  '- I execute this release for full, adequate, and complete consideration fully intending to be bound by the same.',
+  'I hereby set my hand and seal this {date}.',
+];
+
+// One line of text: no line breaks (they would end up in the email subject).
+function line(value, max) {
+  return text(value, max).replace(/\s+/g, ' ');
+}
+
+function validateRegistration(input) {
+  if (!input || typeof input !== 'object') return { error: 'Invalid request' };
+  const classes = Array.isArray(input.classes) ? CLASSES.filter((c) => input.classes.includes(c)) : [];
+  if (!classes.length) return { error: 'Please choose at least one class.' };
+
+  const name = line(input.name, 120);
+  if (!name) return { error: 'Please enter your full name.' };
+  const email = line(input.email, 200);
+  if (!EMAIL_RE.test(email)) return { error: 'Please enter a valid email address.' };
+  const phone = line(input.phone, 40);
+  if (!phone) return { error: 'Please enter your phone number.' };
+  if (!validDate(input.dob) || input.dob < '1900-01-01' || input.dob > new Date().toISOString().slice(0, 10)) {
+    return { error: 'Please enter a valid date of birth.' };
+  }
+  if (input.agree !== true) return { error: 'Please tick the box to agree to the waiver.' };
+  const signature = line(input.signature, 120);
+  if (!signature) return { error: 'Please type your full name as your signature.' };
+
+  return {
+    value: { classes, name, email, phone, dob: input.dob, health: text(input.health, 2000), signature },
+  };
+}
+
+function ordinal(n) {
+  const s = ['th', 'st', 'nd', 'rd'];
+  const v = n % 100;
+  return n + (s[(v - 20) % 10] || s[v] || s[0]);
+}
+
+function longDate(iso) {
+  const [y, m, d] = iso.split('-').map(Number);
+  return `${MONTH_NAMES[m - 1]} ${d}, ${y}`;
+}
+
+async function register(request, env) {
+  const body = await readJson(request);
+  // Hidden "company" field: people never see it, spam bots fill it in.
+  // Pretend it worked so the bot moves on.
+  if (body && body.company) return json({ ok: true });
+
+  const parsed = validateRegistration(body);
+  if (parsed.error) return json({ error: parsed.error }, 400);
+  const reg = parsed.value;
+
+  const now = new Date();
+  const id = crypto.randomUUID();
+  // Julie is in Rhode Island, so dates on the waiver use Eastern time.
+  const parts = Object.fromEntries(
+    new Intl.DateTimeFormat('en-US', { timeZone: 'America/New_York', year: 'numeric', month: 'numeric', day: 'numeric' })
+      .formatToParts(now).map((p) => [p.type, p.value]),
+  );
+  const signedOn = `${ordinal(Number(parts.day))} day of ${MONTH_NAMES[Number(parts.month) - 1]}, in the year ${parts.year}`;
+  const submitted = new Intl.DateTimeFormat('en-US', {
+    timeZone: 'America/New_York', dateStyle: 'long', timeStyle: 'short',
+  }).format(now) + ' (Eastern)';
+  const waiver = WAIVER.map((p) => p.replace('{name}', () => reg.name).replace('{date}', signedOn));
+
+  const record = { id, submittedAt: now.toISOString(), ...reg, agreed: true, waiver };
+
+  let saved = false;
+  let emailed = false;
+  try {
+    if (env.REGISTRATIONS) {
+      await env.REGISTRATIONS.put(`${record.submittedAt}-${id}`, JSON.stringify(record));
+      saved = true;
+    }
+  } catch (err) {
+    console.error('Saving registration failed', err);
+  }
+  try {
+    if (env.REGISTRATION_EMAIL) {
+      await env.REGISTRATION_EMAIL.send({
+        from: REGISTRATION_FROM,
+        to: REGISTRATION_TO,
+        replyTo: reg.email,
+        subject: `Registration and waiver: ${reg.name}`,
+        ...registrationEmail(reg, waiver, submitted, id),
+      });
+      emailed = true;
+    }
+  } catch (err) {
+    console.error('Emailing registration failed', err);
+  }
+
+  if (!saved && !emailed) {
+    return json({ error: 'Sorry, your form could not be sent. Please call Julie at 401.742.4553.' }, 500);
+  }
+  if (!emailed) console.error(`Registration ${id} was saved but not emailed`);
+  return json({ ok: true });
+}
+
+function registrationEmail(reg, waiver, submitted, id) {
+  const rows = [
+    ['Classes', reg.classes.join('; ')],
+    ['Name', reg.name],
+    ['Email', reg.email],
+    ['Phone', reg.phone],
+    ['Date of birth', longDate(reg.dob)],
+    ['Physical limitations or health issues', reg.health || 'None listed'],
+  ];
+  const signed = [
+    ['Agreed to the waiver', 'Yes'],
+    ['Signature (typed)', reg.signature],
+    ['Name printed', reg.name],
+    ['Submitted', submitted],
+    ['Reference', id],
+  ];
+
+  const plain = (list) => list.map(([k, v]) => `${k}: ${v}`).join('\n');
+  const textBody = [
+    'New registration and waiver from the Healthy Futures website.',
+    'Reply to this email to answer ' + reg.name + '.',
+    '',
+    'REGISTRATION',
+    plain(rows),
+    '',
+    'WAIVER OF LIABILITY',
+    waiver.join('\n\n'),
+    '',
+    plain(signed),
+  ].join('\n');
+
+  const table = (list) => '<table cellpadding="6" style="border-collapse:collapse">' + list.map(([k, v]) =>
+    `<tr><th align="left" valign="top" style="padding-right:16px">${esc(k)}</th><td style="white-space:pre-wrap">${esc(v)}</td></tr>`,
+  ).join('') + '</table>';
+  const html = [
+    '<div style="font-family:Arial,sans-serif;font-size:15px;color:#16332b">',
+    '<p>New registration and waiver from the Healthy Futures website. Reply to this email to answer ' + esc(reg.name) + '.</p>',
+    '<h2 style="font-size:18px">Registration</h2>',
+    table(rows),
+    '<h2 style="font-size:18px">Waiver of Liability</h2>',
+    waiver.map((p) => `<p>${esc(p)}</p>`).join(''),
+    table(signed),
+    '</div>',
+  ].join('');
+
+  return { text: textBody, html };
+}
+
+function esc(value) {
+  return String(value).replace(/[&<>"']/g, (c) => (
+    { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]
+  ));
 }
 
 /* ---------- owner authentication ---------- */

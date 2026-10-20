@@ -125,6 +125,7 @@ img { max-width: 100%; }
   color: var(--ink);
   padding: 0.55rem 0.85rem;
   border-radius: 999px;
+  white-space: nowrap;
 }
 .site-nav .nav-link:hover,
 .site-nav .nav-link:focus-visible { color: var(--accent-dark); background: var(--accent-soft); }
@@ -148,7 +149,7 @@ img { max-width: 100%; }
 .navbar-toggler { border: 2px solid var(--line); border-radius: 12px; padding: 0.4rem 0.6rem; }
 .navbar-toggler:focus { box-shadow: 0 0 0 3px rgba(20, 122, 77, 0.25); }
 
-@media (max-width: 991.98px) {
+@media (max-width: 1199.98px) {
   .site-nav .navbar-collapse { padding: 0.75rem 0 0.5rem; }
   .nav-cta .btn { margin: 0.5rem 0 0; display: block; text-align: center; }
   .dropdown-menu { box-shadow: none; padding-left: 1rem; }
@@ -362,12 +363,17 @@ img { max-width: 100%; }
   transition: box-shadow .2s, transform .2s;
   height: 100%;
 }
-.place:hover { color: var(--ink); box-shadow: var(--shadow), 0 0 0 1px var(--line); transform: translateY(-4px); }
+a.place:hover { color: var(--ink); box-shadow: var(--shadow), 0 0 0 1px var(--line); transform: translateY(-4px); }
 .place img { width: 100%; aspect-ratio: 3 / 2; object-fit: cover; display: block; }
 .place-body { display: flex; justify-content: space-between; align-items: center; padding: 1rem 1.3rem; }
 .place-body h3 { margin: 0; font-size: 1.15rem; }
 .place-body small { color: var(--ink-soft); font-size: 0.9rem; font-weight: 600; }
 .place .ext { color: var(--accent); font-size: 1.4rem; line-height: 1; font-weight: 800; }
+
+/* healthyFUTURES wordmark (About page) */
+.hf-mark { font-size: clamp(2rem, 4vw, 2.6rem); font-weight: 600; letter-spacing: -0.01em; margin-bottom: 0.4rem; }
+.hf-mark b { color: var(--accent); font-weight: 800; }
+.hf-tagline { color: var(--ink-soft); font-size: 1.15rem; font-weight: 600; margin: 0; }
 
 .video-frame {
   border-radius: 24px;
@@ -639,6 +645,78 @@ img { max-width: 100%; }
 .cal-dialog .form-error { color: #b42318; font-weight: 700; margin: 0 0 1rem; }
 .cal-dialog .form-error:empty { display: none; }
 .cal-dialog .buttons { display: flex; gap: 0.6rem; justify-content: flex-end; flex-wrap: wrap; margin-top: 0.5rem; }
+
+/* ---------- Registration form ---------- */
+.reg-form, .reg-done { max-width: 46rem; margin: 0 auto; }
+.reg-card {
+  background: #fff;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm), 0 0 0 1px var(--line);
+  padding: clamp(1.4rem, 4vw, 2.25rem);
+  margin-bottom: 1.5rem;
+}
+.reg-card h2 { font-size: 1.6rem; margin-bottom: 1.25rem; }
+.reg-form fieldset { border: 0; padding: 0; margin: 0; min-width: 0; }
+.reg-form label, .reg-form legend { display: block; font-weight: 700; font-size: 1.1rem; margin-bottom: 0.35rem; color: var(--heading); }
+.reg-form .req { color: #b42318; }
+.reg-form .opt { font-weight: 500; color: var(--ink-soft); }
+.reg-form input[type="text"],
+.reg-form input[type="email"],
+.reg-form input[type="tel"],
+.reg-form input[type="date"],
+.reg-form textarea {
+  width: 100%;
+  font: inherit;
+  font-size: 1.15rem;
+  padding: 0.7rem 0.9rem;
+  border: 2px solid #c9d9d0;
+  border-radius: 12px;
+  background: #fff;
+  color: var(--ink);
+}
+.reg-form textarea { resize: vertical; }
+.reg-form input:focus, .reg-form textarea:focus {
+  outline: 3px solid rgba(20, 122, 77, 0.25);
+  border-color: var(--accent);
+}
+.reg-form :disabled { opacity: 1; color: var(--ink); background: #fff; }
+.reg-form .field { margin-bottom: 1.25rem; }
+.reg-form .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0 1rem; }
+@media (max-width: 575.98px) { .reg-form .field-row { grid-template-columns: 1fr; } }
+
+.reg-form .choice { display: flex; align-items: flex-start; gap: 0.75rem; margin-bottom: 0.6rem; }
+.reg-form .choice input { flex: none; width: 1.6rem; height: 1.6rem; margin-top: 0.1rem; accent-color: var(--accent); }
+.reg-form .choice label { font-weight: 600; margin: 0; color: var(--ink); cursor: pointer; }
+.reg-form .choice.agree { background: var(--sun-soft); border-radius: var(--radius-sm); padding: 0.9rem 1rem; margin: 1.5rem 0 1.25rem; }
+.reg-form .choice.agree label { font-weight: 700; }
+
+.waiver {
+  background: var(--surface);
+  border-radius: var(--radius-sm);
+  padding: 1.25rem 1.4rem;
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+.waiver ul { padding-left: 1.25rem; }
+.waiver .fill, .reg-printed .fill { color: var(--accent-dark); }
+.reg-form input.signature { font-size: 1.4rem; font-style: italic; }
+.reg-printed { margin: -0.5rem 0 1.25rem; color: var(--ink-soft); font-weight: 600; }
+
+.reg-trap { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+
+.reg-form .form-error { color: #b42318; font-weight: 700; font-size: 1.1rem; margin: 0 0 1rem; }
+.reg-form .form-error:empty { display: none; }
+.reg-card .buttons { display: flex; gap: 0.6rem; flex-wrap: wrap; }
+.reg-card .buttons .btn { font-size: 1.15rem; padding: 0.75rem 1.75rem; }
+.reg-done { border: 3px solid var(--accent); }
+.reg-done:focus { outline: none; }
+.reg-paper { max-width: 46rem; margin: 1rem auto 0; color: var(--ink-soft); }
+
+@media print {
+  .site-header, .site-footer, .skip-link, .page-header .page-photo, .reg-paper, .reg-done .buttons { display: none !important; }
+  .page-header, .section { padding: 1rem 0 !important; background: none !important; }
+  .reg-card { box-shadow: none; border: 1px solid #999; break-inside: avoid; }
+}
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }

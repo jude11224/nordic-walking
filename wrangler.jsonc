@@ -18,7 +18,7 @@
   "kv_namespaces": [
     // The calendar events.
     { "binding": "EVENTS" },
-    // Every registration form. Email is off for now; see README to turn it on.
+    // A backup copy of every registration form (they also go to the Google Sheet).
     { "binding": "REGISTRATIONS" }
   ]
 }

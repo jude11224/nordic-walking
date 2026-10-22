@@ -18,32 +18,43 @@ Anyone can view the calendar. Only the owner can add, edit or delete events.
 
 Until `ADMIN_PASSWORD` is set, nobody can log in and the calendar is read-only.
 
-## Registrations
+## Registrations: one-time setup
 
-The Register page (`/register.html`) saves each registration and waiver in
-Cloudflare. To see them: Cloudflare dashboard -> Storage & databases ->
-Workers KV -> `REGISTRATIONS`. Each entry is named by the date and time it was
-sent.
+The Register page (`/register.html`) sends each registration and waiver to a
+Google Sheet, and Julie gets an email (to julie7747@gmail.com) for every one.
+A small Google Apps Script attached to the Sheet does both. The email comes
+from the Gmail account that owns the Sheet; replying goes to the person who
+signed up.
 
-Emailing them to julie7747@gmail.com is built in but switched off, because
-Cloudflare Email Sending needs the Workers Paid plan ($5/month). To turn it on:
+1. In your Google account, make a new Google Sheet called
+   "Healthy Futures Registrations". Click **Share**, add julie7747@gmail.com.
+2. In the Sheet: **Extensions -> Apps Script**. Delete what's in the editor,
+   paste in everything from `google-apps-script/Code.gs`, and click Save.
+3. **Deploy -> New deployment**. Click the gear, pick **Web app**. Set
+   "Execute as" to **Me** and "Who has access" to **Anyone**, then **Deploy**.
+   Google asks you to allow access: pick your account, then **Advanced ->
+   Go to ... (unsafe)** (that's normal for your own script) -> **Allow**.
+   Copy the **Web app URL**.
+4. Cloudflare dashboard -> Workers & Pages -> `healthy-futures` -> Settings ->
+   Variables and Secrets -> **Add**. Type **Secret**, name
+   `REGISTRATION_SHEET_URL`, value = the Web app URL.
+5. Open `/api/status` on the live site and check `registrationSheet` is `true`.
 
-1. Upgrade to Workers Paid, then Cloudflare dashboard -> Compute -> Email
-   Service -> Email Sending -> **Onboard Domain** -> pick
-   `healthyfuturesnow.com` and add the records it suggests. Don't use Email
-   Routing instead: it would take over the domain's MX records, and mail to
-   the Namecheap Private Email inbox would stop arriving.
-2. Add this to `wrangler.jsonc` and deploy:
+Until step 4 is done, the form tells people it couldn't be sent and to call
+Julie.
 
-       "send_email": [
-         { "name": "REGISTRATION_EMAIL", "destination_address": "julie7747@gmail.com" }
-       ]
-
-3. Open `/api/status` on the live site and check `registrationEmail` is `true`.
-
-The sending address (`registration@healthyfuturesnow.com`) is set at the top of
-`src/worker.js`. The waiver wording lives in two places, `register.html` and
-`WAIVER` in `src/worker.js`; change both together.
+Good to know:
+- Treat the Web app URL like a password: anyone with it can add rows.
+- If you change `Code.gs` later, use **Deploy -> Manage deployments -> Edit ->
+  Version: New version** so the URL stays the same.
+- Gmail lets a script send about 100 emails a day, which is plenty.
+- Julie can add the Sheet owner's Gmail address to her contacts so these never
+  land in spam.
+- Every form is also saved as a backup in Cloudflare: dashboard -> Storage &
+  databases -> Workers KV -> `REGISTRATIONS`, named by the date and time it
+  was sent.
+- The waiver wording lives in two places, `register.html` and `WAIVER` in
+  `src/worker.js`; change both together.
 
 ## Local preview
 

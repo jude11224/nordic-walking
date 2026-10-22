@@ -8,7 +8,7 @@
 //   GET    /api/status        public   setup check (no secret values)
 //   POST   /api/login         public   { password } -> sets owner cookie
 //   POST   /api/logout        public   clears owner cookie
-//   POST   /api/register      public   registration + waiver -> emailed to Julie
+//   POST   /api/register      public   registration + waiver -> Google Sheet + email to Julie
 //   POST   /api/events        owner    add an event
 //   PUT    /api/events/:id    owner    update an event
 //   DELETE /api/events/:id    owner    remove an event
@@ -16,17 +16,14 @@
 // Setup (once): set the owner password as a secret named ADMIN_PASSWORD.
 //   npx wrangler secret put ADMIN_PASSWORD
 // Events are stored in the EVENTS KV namespace (created automatically on
-// deploy from wrangler.jsonc). Registrations are kept in REGISTRATIONS, and
-// also emailed when a REGISTRATION_EMAIL binding is set (off for now, see README).
+// deploy from wrangler.jsonc). Registrations are sent to a Google Apps Script
+// (secret REGISTRATION_SHEET_URL) that adds them to a Google Sheet and emails
+// Julie; a backup copy is kept in REGISTRATIONS. See README for setup.
 
 const COOKIE = 'hf_owner';
 const SESSION_SECONDS = 60 * 60 * 24 * 14; // stay signed in for 14 days
 const EVENTS_KEY = 'events';
 const MAX_EVENTS = 1000;
-
-// Registration emails go from an address on the site's own domain to Julie.
-const REGISTRATION_FROM = 'registration@healthyfuturesnow.com';
-const REGISTRATION_TO = 'julie7747@gmail.com';
 
 const enc = new TextEncoder();
 
@@ -60,7 +57,7 @@ async function route(request, env, url) {
     return json({
       passwordConfigured: !!env.ADMIN_PASSWORD,
       eventsStorage: !!env.EVENTS,
-      registrationEmail: !!env.REGISTRATION_EMAIL,
+      registrationSheet: !!env.REGISTRATION_SHEET_URL,
       registrationsStorage: !!env.REGISTRATIONS,
       bindingNames: Object.keys(env).sort(),
     });
@@ -270,36 +267,49 @@ async function register(request, env) {
 
   const record = { id, submittedAt: now.toISOString(), ...reg, agreed: true, waiver };
 
-  let saved = false;
-  let emailed = false;
+  // The backup copy is always kept, but the form only counts as sent once it
+  // reaches the Sheet, because that is what Julie sees.
   try {
-    if (env.REGISTRATIONS) {
-      await env.REGISTRATIONS.put(`${record.submittedAt}-${id}`, JSON.stringify(record));
-      saved = true;
-    }
+    if (env.REGISTRATIONS) await env.REGISTRATIONS.put(`${record.submittedAt}-${id}`, JSON.stringify(record));
   } catch (err) {
-    console.error('Saving registration failed', err);
+    console.error('Saving registration backup failed', err);
   }
   try {
-    if (env.REGISTRATION_EMAIL) {
-      await env.REGISTRATION_EMAIL.send({
-        from: REGISTRATION_FROM,
-        to: REGISTRATION_TO,
-        replyTo: reg.email,
-        subject: `Registration and waiver: ${reg.name}`,
-        ...registrationEmail(reg, waiver, submitted, id),
-      });
-      emailed = true;
-    }
+    await sendToSheet(env, {
+      id,
+      submitted,
+      classes: reg.classes.join('; '),
+      name: reg.name,
+      email: reg.email,
+      phone: reg.phone,
+      dob: longDate(reg.dob),
+      health: reg.health,
+      signature: reg.signature,
+      waiver: waiver.join('\n\n'),
+      subject: `Registration and waiver: ${reg.name}`,
+      ...registrationEmail(reg, waiver, submitted, id),
+    });
   } catch (err) {
-    console.error('Emailing registration failed', err);
+    console.error(`Registration ${id} was not sent to the Sheet`, err);
+    return json({ error: 'Sorry, your form could not be sent. Please try again, or call Julie at 401.742.4553.' }, 502);
   }
-
-  if (!saved && !emailed) {
-    return json({ error: 'Sorry, your form could not be sent. Please call Julie at 401.742.4553.' }, 500);
-  }
-  if (env.REGISTRATION_EMAIL && !emailed) console.error(`Registration ${id} was saved but not emailed`);
   return json({ ok: true });
+}
+
+// POSTs to the Google Apps Script web app (google-apps-script/Code.gs). Google
+// answers with a redirect, which fetch follows. Script errors come back as a
+// 200 HTML page, so only a JSON { ok: true } reply counts as success.
+async function sendToSheet(env, payload) {
+  if (!env.REGISTRATION_SHEET_URL) throw new Error('REGISTRATION_SHEET_URL is not set');
+  const res = await fetch(env.REGISTRATION_SHEET_URL, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(payload),
+  });
+  const reply = await res.json().catch(() => null);
+  if (!res.ok || !reply || reply.ok !== true) {
+    throw new Error(`Sheet replied ${res.status}${reply && reply.error ? ': ' + reply.error : ''}`);
+  }
 }
 
 function registrationEmail(reg, waiver, submitted, id) {

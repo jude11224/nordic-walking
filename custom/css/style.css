@@ -99,6 +99,7 @@ img { max-width: 100%; }
 .text-link:hover { text-decoration: underline; }
 
 /* ---------- Header / navigation ---------- */
+html { scroll-padding-top: 6rem; } /* anchor links land below the sticky header */
 .site-header {
   position: sticky;
   top: 0;
@@ -385,6 +386,7 @@ a.place:hover { color: var(--ink); box-shadow: var(--shadow), 0 0 0 1px var(--li
   margin: 0 auto;
 }
 .video-frame video { width: 100%; display: block; }
+.video-frame.tall { max-width: 360px; }
 
 /* ---------- Gallery ---------- */
 .masonry { columns: 3 260px; column-gap: 1rem; }

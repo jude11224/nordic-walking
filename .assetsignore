@@ -17,3 +17,7 @@ vendor
 # web-optimized copies in img/web/, so skip everything else in img/.
 img/*
 !img/web/
+
+# Project documentation (not public website assets)
+vault
+AGENTS.md

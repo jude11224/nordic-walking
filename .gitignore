@@ -1,3 +1,8 @@
 # Local wrangler dev files
 .wrangler/
 node_modules/
+
+# Per-device Obsidian state
+vault/.obsidian/workspace*.json
+vault/.obsidian/cache/
+vault/.trash/

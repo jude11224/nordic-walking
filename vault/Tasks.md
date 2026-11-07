@@ -8,6 +8,8 @@ Capture future work here.
 
 ## Done
 
+- [x] Move the active Windows repository out of OneDrive and point GitHub Desktop to local Documents.
+
 - [x] Prepare and validate the local development environment.
 - [x] Create a linked Obsidian vault for the site.
 

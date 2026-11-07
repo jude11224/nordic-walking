@@ -1,5 +1,13 @@
 # Local Development
 
+## Windows checkout
+
+The active Windows checkout is `C:\Users\jude0\Documents\GitHub\nordic-walking`, outside OneDrive. GitHub Desktop, this Codex project, and the open Obsidian vault use this local folder.
+
+The former OneDrive checkout was archived at `C:\Users\jude0\Documents\Repository Backups\nordic-walking-from-OneDrive`. Use the active checkout for ongoing work; the archived folder is a backup. The migration preserved the newer Git history and the local untracked files.
+
+## Managed cloud development
+
 Use the existing `/workspace/nordic-walking` checkout. Cloud tasks are already isolated; create a Git worktree only if explicitly requested.
 
 Onboarding used Node 24 and Wrangler 4.158.0, installed outside the checkout:

@@ -1,5 +1,13 @@
 # Project Log
 
+## 2026-11-06 — Windows repository moved out of OneDrive
+
+- Confirmed Windows Documents resolves to `C:\Users\jude0\Documents`.
+- Reconciled the local checkout with the newer OneDrive Git history at `7a5f0ab`, preserving local working files and a branch pointing to the former local main revision.
+- Compared all 120 source working files with the active Documents copy; no files were missing and contents matched after accounting for line endings. Extra local photos and notes were preserved.
+- Archived the former OneDrive checkout in `C:\Users\jude0\Documents\Repository Backups\nordic-walking-from-OneDrive`.
+- Used GitHub Desktop's Locate action to point its existing repository entry to `C:\Users\jude0\Documents\GitHub\nordic-walking`. Confirmed Codex and Obsidian already use that local folder. No website deployment was performed.
+
 ## 2026-11-06 — Environment onboarding
 
 - Prepared local development with Node 24 and Wrangler 4.158.0.

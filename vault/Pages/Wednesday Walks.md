@@ -14,4 +14,6 @@ Source: `walk_with_me_wednesdays.html`.
 
 ## Maintenance
 
+The group photo and silent trail video display separately. The location cards show Wahaneeta Preserve, two Moore Woods photos, two Barn Island photos, and Barlow Preserve. Schedule entries are managed through [[Calendar Operations]].
+
 See [[Content Maintenance]] and [[Site Map]].

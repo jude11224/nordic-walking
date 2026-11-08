@@ -20,4 +20,5 @@ img/*
 
 # Project documentation (not public website assets)
 vault
+docs
 AGENTS.md

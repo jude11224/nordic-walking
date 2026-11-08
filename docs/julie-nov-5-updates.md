@@ -37,24 +37,17 @@ All thirteen unique JPG attachments were recovered directly from Julie's emails.
 | `20261027_103340.jpg` | Gallery; source already present under `img/newimgs/` |
 | `20261105_114239.jpg` | Information page; credited brochure research panel |
 
-## Exact outstanding file
+## Emailed video
 
-**No requested photo or image swap is missing.**
+All requested photos and videos are accounted for.
 
-The only unavailable emailed media file is **`20250416_114919_1.mp4`**, attached to Julie's **November 5, 12:48:49 PM, “(No Subject)”** email, approximately 25.7 MB. [Open the source email](https://mail.google.com/mail/u/0/#all/1a1acd41cf503229).
-
-This file is absent from the project. The Gmail connector reports video attachments as unsupported, and the browser download attempt failed. Provide this exact original MP4 to finish adding it to the gallery. The existing `20250416_115139_1.mp4` is a different filename and has not been substituted.
+The November 8 review located `20250416_114919_1.mp4` in Downloads. Its filename and byte count match Julie's November 5, 12:48 PM attachment. A browser compatible copy now appears in the gallery as the standing stretch clip. [Source email](https://mail.google.com/mail/u/0/#all/1a1acd41cf503229).
 
 Julie floated background music, bird sounds or a stream as a question. No audio file was supplied or selected, so this optional feature has not been added. Suggested reply: offer an optional Play/Pause control if she wants ambient sound, with playback starting only when the visitor chooses it.
 
-## Validation and publication
+## November 8 follow-up
 
-- Checked all ten HTML pages and 319 local link, media and fragment references. The existing `calendar.html#login` route is handled by JavaScript.
-- Verified six remaining location cards, twelve new gallery photos and the moved video reference.
-- Decoded the updated walking video successfully and confirmed it contains no audio stream.
-- `git diff --check` passed.
-- Browser verification could not be completed because the browser connection failed during the video download attempt.
-- Changes are saved locally; they have not been committed, pushed or deployed. Existing unrelated untracked files were left untouched. This internal report is excluded from Cloudflare assets.
+Reviewed Julie's emails from October 25 through November 8. The Oct 31 homepage copy, class button and removal of the old picture cards were already in place. The November 5 HTML edits had dropped out of the checkout and were restored. The updated pages and media are saved locally for deployment. See the November schedule and owner login status in the calendar operations note.
 
 ## Suggested reply to Julie
 
@@ -62,7 +55,7 @@ Hi Julie,
 
 I've made your November 5 changes in the website project: Stretch and Strengthen is in the menu and Explore links, ACTIVATOR and Nordic Walking Striders Club are named correctly, the walking locations are corrected, and the seventh location image is removed. The four-women photo is separate from the walking video, and that video now has no audio. I restored your shadow photo beside “Who am I?”, updated your credentials and client ages, renamed the gallery “Our Fitness Gallery,” added the emailed photos, and moved the woman-in-green video there. I also added the pole brochure panel with credit to Urban Poling, Inc.
 
-The updates are saved locally and still need publishing. All the photos are accounted for. The one remaining item is the separately emailed `20250416_114919_1.mp4` video, which I couldn't retrieve. Could you resend that exact file?
+The updates are saved locally and still need publishing. All the photos are accounted for, and I found and added your separately emailed standing stretch video.
 
 For background sounds, I'd suggest an optional Play/Pause button so visitors can choose whether to listen.
 

@@ -15,4 +15,6 @@ Source: `index.html`.
 
 ## Maintenance
 
+Stretch and Strengthen links directly to its class description from the homepage buttons, main navigation and Explore footer.
+
 See [[Content Maintenance]] and [[Site Map]].

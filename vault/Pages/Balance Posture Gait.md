@@ -13,4 +13,6 @@ Source: `balance_posture_gait.html`.
 
 ## Maintenance
 
+Keep the Who am I? bio aligned with [[About Julie]].
+
 See [[Content Maintenance]] and [[Site Map]].

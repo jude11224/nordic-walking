@@ -12,4 +12,6 @@ Source: `nordic_walking.html`.
 
 ## Maintenance
 
+The riverside clip appears here. The indoor ACTIVATOR pole walking clip is in the [[Gallery]].
+
 See [[Content Maintenance]] and [[Site Map]].

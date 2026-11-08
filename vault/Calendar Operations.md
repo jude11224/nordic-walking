@@ -16,4 +16,17 @@ Events are kept in the `EVENTS` KV binding under `events`. Event data includes t
 
 Sources: `calendar.html`, `custom/js/calendar.js`, `src/worker.js`.
 
+## November 2026 Wednesday walks
+
+Julie's November 5 follow-up resolves the November 18 location. The email gives dates and locations. It gives no start or end times.
+
+| Date | Location |
+| --- | --- |
+| November 4 | Moore Woods |
+| November 11 | Grills Preserve, Westerly |
+| November 18 | Spellman Park, Stonington |
+| November 25 | Roaring Brook Trail, Hopkinton |
+
+On November 8, the live calendar showed no November events. Adding the four walks requires an owner session. [Julie's schedule email](https://mail.google.com/mail/u/0/#all/1a1ac669db4c8ac8).
+
 See [[Local Development]] and [[Deployment]].

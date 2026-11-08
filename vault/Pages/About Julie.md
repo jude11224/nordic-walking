@@ -14,4 +14,6 @@ Source: `about_me.html`.
 
 ## Maintenance
 
+The heading uses the shadow photo. The bio displays the supplied portrait and describes Julie's ACE certifications, Urban Poling Master Trainer certification, and clients ages 74 to 94. Keep the copy on [[Balance Posture Gait]] aligned.
+
 See [[Content Maintenance]] and [[Site Map]].

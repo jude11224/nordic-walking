@@ -1,5 +1,12 @@
 # Project Log
 
+## 2026-11-08 — Julie email audit
+
+- Reviewed 45 messages from Julie dated October 25 through November 8. Confirmed the October 31 homepage copy and layout requests in the checkout and matched that photo and video batch to its site placements.
+- Restored the November 5 navigation, branding, location, bio, gallery and brochure edits from the email checklist. Kept the portrait supplied in the follow-up. Located the missing standing stretch clip in Downloads and added a browser compatible copy. Removed the audio track from the Wednesday walking clip.
+- Verified 10 HTML pages, 321 local references, media responses, the calendar API and the internal report exclusion through local Wrangler. Confirmed the moved and updated videos decode. The Cloudflare deployment dry run passed.
+- The live site still serves the older pages. The local Wrangler CLI has no Cloudflare login. The live calendar has no November events and Brave showed the owner sign-in button. Recorded all four dates and locations in [[Calendar Operations]] pending owner access.
+
 ## 2026-11-06 — Windows repository moved out of OneDrive
 
 - Confirmed Windows Documents resolves to `C:\Users\jude0\Documents`.

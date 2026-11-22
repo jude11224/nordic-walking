@@ -5,6 +5,8 @@ Configuration: `wrangler.jsonc`.
 Worker entry: `src/worker.js`.
 Compatibility date in the checkout: `2026-09-26`.
 
+The connected GitHub `main` branch triggers a Cloudflare Workers build and production deployment. Verify the Cloudflare check on the pushed commit and confirm the changed content on healthyfuturesnow.com.
+
 | Binding | Role |
 | --- | --- |
 | `ASSETS` | Static website files |

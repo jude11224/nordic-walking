@@ -27,6 +27,8 @@ Julie's November 5 follow-up resolves the November 18 location. The email gives 
 | November 18 | Spellman Park, Stonington |
 | November 25 | Roaring Brook Trail, Hopkinton |
 
-On November 8, the live calendar showed no November events. Adding the four walks requires an owner session. [Julie's schedule email](https://mail.google.com/mail/u/0/#all/1a1ac669db4c8ac8).
+All four walks were added and verified on the public calendar on November 8. At that check they were recorded as all-day entries because the email supplied no times. [Julie's schedule email](https://mail.google.com/mail/u/0/#all/1a1ac669db4c8ac8).
+
+The November 19 live-site audit showed all four walks at **11:00 AM**, at the same dates and locations. This supersedes the older all-day display note; the audit did not edit calendar events or establish who updated the times.
 
 See [[Local Development]] and [[Deployment]].

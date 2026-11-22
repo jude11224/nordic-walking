@@ -1,5 +1,7 @@
 # Julie's November 5, 2026 website updates
 
+November 19 follow-up: this report records the earlier batch and deployment. A broader photo review found additional older and newer submissions. The approved local 41-photo gallery update, current filename mapping, original-source archive and still-open media items are documented in [gallery-photo-inventory.md](gallery-photo-inventory.md). That update has not been deployed; earlier statements below that all photos/videos are accounted for apply to the November 5 review scope.
+
 Source of truth: Julie's 12:42 PM message in [Website updates are done](https://mail.google.com/mail/u/0/#all/1a1acce97481348c), including her 7:24 PM follow-up. Separate photo emails from November 5 were also reviewed. All times below are Eastern.
 
 ## Completed in the local Healthy Futures project
@@ -47,7 +49,7 @@ Julie floated background music, bird sounds or a stream as a question. No audio 
 
 ## November 8 follow-up
 
-Reviewed Julie's emails from October 25 through November 8. The Oct 31 homepage copy, class button and removal of the old picture cards were already in place. The November 5 HTML edits had dropped out of the checkout and were restored. The updated pages and media are saved locally for deployment. See the November schedule and owner login status in the calendar operations note.
+Reviewed Julie's emails from October 25 through November 8. The Oct 31 homepage copy, class button and removal of the old picture cards were already in place. The November 5 HTML edits had dropped out of the checkout and were restored. Cloudflare published the pages and media from GitHub commit `160cce3`. See the November schedule and owner login status in the calendar operations note.
 
 ## Suggested reply to Julie
 
@@ -55,7 +57,7 @@ Hi Julie,
 
 I've made your November 5 changes in the website project: Stretch and Strengthen is in the menu and Explore links, ACTIVATOR and Nordic Walking Striders Club are named correctly, the walking locations are corrected, and the seventh location image is removed. The four-women photo is separate from the walking video, and that video now has no audio. I restored your shadow photo beside “Who am I?”, updated your credentials and client ages, renamed the gallery “Our Fitness Gallery,” added the emailed photos, and moved the woman-in-green video there. I also added the pole brochure panel with credit to Urban Poling, Inc.
 
-The updates are saved locally and still need publishing. All the photos are accounted for, and I found and added your separately emailed standing stretch video.
+The page updates are live. All the photos are accounted for, and I found and added your separately emailed standing stretch video. Your four November walks are on the calendar.
 
 For background sounds, I'd suggest an optional Play/Pause button so visitors can choose whether to listen.
 

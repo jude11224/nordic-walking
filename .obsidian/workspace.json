@@ -4,17 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "1567d442f5c7b4d4",
+        "id": "fa41f6d5fd133280",
         "type": "tabs",
         "children": [
           {
-            "id": "795daaaca9ef7865",
+            "id": "fde5fb512b7a3bfa",
             "type": "leaf",
             "state": {
-              "type": "graph",
+              "type": "empty",
               "state": {},
-              "icon": "lucide-git-fork",
-              "title": "Graph view"
+              "icon": "lucide-file",
+              "title": "New tab"
             }
           }
         ]
@@ -181,8 +181,10 @@
       "bases:Create new base": false
     }
   },
-  "active": "795daaaca9ef7865",
+  "active": "37baec7691bb01b8",
   "lastOpenFiles": [
+    "Untitled 1",
+    "Untitled",
     "vault/Calendar Operations.md",
     "vault/Deployment.md",
     "vault/Home.md",

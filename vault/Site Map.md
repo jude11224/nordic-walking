@@ -15,4 +15,6 @@
 
 Filename case matters: `Gallery.html` and `Information.html` begin with capitals.
 
+The November 19 local [[Gallery]] update contains 41 unique photo entries, including the adjacent Glacier Park/water-strider pair. URLs and the page map remain the same. The photo inventory is in `docs/gallery-photo-inventory.md`; these changes are not yet deployed.
+
 Related: [[Architecture]] · [[Content Maintenance]]

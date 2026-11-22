@@ -12,6 +12,8 @@ Use [[Site Map]] to locate a page. The site is edited directly in HTML, with sha
 
 `.assetsignore` excludes original media, tooling, and server source from static uploads. Cloudflare rejects individual uploaded assets over 25 MiB, as noted in the repository ignore file.
 
+Gallery photo provenance and the canonical filename mapping are in `docs/gallery-photo-inventory.md` and its JSON companion. Preserve `img/originals/` and the existing source files when updating web copies. The archive includes the original Glacier Park HEIC and both source crops of the November 11 footbridge photograph. The gallery displays one canonical copy of each intended photograph; video posters are separate image uses. Keep the Glacier Park and water-strider figures together in `.gallery-sequence` and retain Julie's exact visible caption.
+
 The old `strength_and_fitness` URL redirects to `balance_posture_gait` through `_redirects`.
 
 Use [[Change Note]] as a template for recording changes. See [[Deployment]] before publishing.

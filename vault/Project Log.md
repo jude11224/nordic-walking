@@ -1,5 +1,15 @@
 # Project Log
 
+## 2026-11-08 — November walks published
+
+- Added Julie's four November walks through the live owner calendar. Verified the dates and locations on the public API, with blank times as supplied and both October events still present.
+
+## 2026-11-08 — Julie's page updates published
+
+- Pushed commit `160cce3` to GitHub `main`. The connected Cloudflare Workers build passed and deployed to healthyfuturesnow.com.
+- Verified the live homepage, biography, gallery, walking locations and ACTIVATOR brochure. Checked that the two video assets and portrait are served and the internal email audit is excluded. The live status endpoint reports that the calendar and registration bindings are present.
+- Opened the owner sign-in for the four November calendar entries. The public calendar still had two October events when checked after deployment.
+
 ## 2026-11-08 — Julie email audit
 
 - Reviewed 45 messages from Julie dated October 25 through November 8. Confirmed the October 31 homepage copy and layout requests in the checkout and matched that photo and video batch to its site placements.
@@ -38,3 +48,13 @@ Copied all 21 notes and Obsidian settings into `vault/`. Added repository-root `
 ## 2026-11-06 — Main branch publication
 
 Prepared the vault and root agent instructions for main at the user’s request. Validated all 21 note links and Obsidian JSON settings. The remote main branch has a newer media-only commit; preserve it when integrating these documentation changes.
+
+
+## 2026-11-19 — Approved gallery reconciliation, local only
+
+- Audited the live site and Julie's gallery emails before approval, then implemented the approved 41-photo plan locally. Added six absent photos, descriptive canonical filenames and specific alt text; updated references across all ten HTML pages. Preserved all existing media and archived all photo originals, including the Glacier Park HEIC and both crops of the November 11 footbridge photograph.
+- Converted Glacier Park to a web JPEG, placed it immediately before the water-strider image in an unbreakable column group, and used the exact caption “Water Strider found at Glacier Park”. Removed the repeated gallery header photo. Updated the Nordic Walking gallery teaser and four-week class wording.
+- Verified 41 unique photo paths/file hashes/decoded-pixel hashes, 41 original-to-web visual matches, all 316 local HTML references, 43 successful JPEG responses/decodes including posters, and exclusion of originals/internal documentation from static serving. All 89 pre-existing media files remain byte-for-byte unchanged.
+- Browser QA passed at desktop 1267 × 943 and mobile 390 × 844: all 41 photos loaded, the pair stayed consecutive in one column, and neither layout overflowed horizontally. Recorded the full mapping and source provenance in `docs/gallery-photo-inventory.md` and JSON.
+- Corrected the calendar note: the earlier live audit now shows 11:00 AM for all four November walks, rather than the older recorded all-day display. Calendar data was not changed. Carried the optional YMCA photo, ambient-audio question and unreconciled video emails into Tasks.
+- No commit, push or deployment was performed. Google Sheets/email remains user-confirmed working in production; no registrations were submitted.

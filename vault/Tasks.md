@@ -7,12 +7,15 @@ Capture future work here.
 - [ ] Confirm gallery placement for the emailed YMCA group photo `20261007_132646.jpg`; it remains outside the approved 41-photo set.
 - [ ] Reconcile the newer `20261111_113606.mp4` attachment and the two Drive links named `20261111_115305.mp4` with Julie's intended video placements. Also identify whether the older `20241120_101802.mp4` is represented by an existing derived video.
 - [ ] Resolve Julie's optional background music/birds/stream question before choosing or adding audio.
+- [ ] Decide website placement for the Nordic Walking Striders Club logo after steering committee review of the blue pinnie mockup.
 
 ## In progress
 
 ## Done
 
-- [x] Audit the live gallery and earlier email requests; implement the approved 41-photo filename, alt-text, original-preservation and Glacier Park/water-strider plan locally. Include the two November 11 photos, related Nordic Walking text corrections and vault corrections. Not deployed; see [[Gallery]] and `docs/gallery-photo-inventory.md`.
+- [x] Add Glacier Park · Green Trail to [[Wednesday Walks]] locally, use WebP for the adjacent [[Gallery]] pair, and recheck the image inventory and November 5 live media.
+
+- [x] Audit the live gallery and earlier email requests; implement the approved 41-photo filename, alt-text, original-preservation and Glacier Park/water-strider plan. Includes the two November 11 photos and related Nordic Walking text corrections. The 41-image gallery was verified live on November 22. See [[Gallery]] and `docs/gallery-photo-inventory.md`.
 
 - [x] Add Julie's four November walks to the live calendar and verify the public dates and locations. See [[Calendar Operations]].
 

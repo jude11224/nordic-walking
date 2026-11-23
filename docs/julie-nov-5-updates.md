@@ -1,6 +1,6 @@
 # Julie's November 5, 2026 website updates
 
-November 19 follow-up: this report records the earlier batch and deployment. A broader photo review found additional older and newer submissions. The approved local 41-photo gallery update, current filename mapping, original-source archive and still-open media items are documented in [gallery-photo-inventory.md](gallery-photo-inventory.md). That update has not been deployed; earlier statements below that all photos/videos are accounted for apply to the November 5 review scope.
+November 22 follow-up. The live gallery serves all 41 images, including the November 5 set. The indoor pole-walking and standing stretch videos both decode, and the separate Wednesday walking video is muted in markup and has no audio stream. The current filename mapping, original-source archive and still-open media items are in the [gallery photo inventory](gallery-photo-inventory.md). Earlier statements below about all photos and videos being accounted for apply to the November 5 batch.
 
 Source of truth: Julie's 12:42 PM message in [Website updates are done](https://mail.google.com/mail/u/0/#all/1a1acce97481348c), including her 7:24 PM follow-up. Separate photo emails from November 5 were also reviewed. All times below are Eastern.
 

@@ -15,6 +15,6 @@
 
 Filename case matters: `Gallery.html` and `Information.html` begin with capitals.
 
-The November 19 local [[Gallery]] update contains 41 unique photo entries, including the adjacent Glacier Park/water-strider pair. URLs and the page map remain the same. The photo inventory is in `docs/gallery-photo-inventory.md`; these changes are not yet deployed.
+The live [[Gallery]] serves 41 unique image entries, including the adjacent Glacier Park and water-strider pair. The November 22 local update replaces those two JPEG references with WebP and adds the Glacier Park card to [[Wednesday Walks]]. The photo inventory is in `docs/gallery-photo-inventory.md`.
 
 Related: [[Architecture]] · [[Content Maintenance]]

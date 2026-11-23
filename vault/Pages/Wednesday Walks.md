@@ -14,6 +14,6 @@ Source: `walk_with_me_wednesdays.html`.
 
 ## Maintenance
 
-The group photo and silent trail video display separately. The location cards show Wahaneeta Preserve, two Moore Woods photos, two Barn Island photos, and Barlow Preserve. Schedule entries are managed through [[Calendar Operations]].
+The group photo and silent trail video display separately. The November 22 live audit confirmed the MP4 has no audio stream. The live location cards show Wahaneeta Preserve, two Moore Woods photos, two Barn Island photos, and Barlow Preserve. The local update adds **Glacier Park · Green Trail** as the seventh card, linking to the Westerly Land Trust's park page and using the same `glacier-park-green-trail.webp` as [[Gallery]]. Schedule entries are managed through [[Calendar Operations]].
 
 See [[Content Maintenance]] and [[Site Map]].

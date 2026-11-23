@@ -293,8 +293,8 @@
     "alt": "Deer standing in tall golden grass near a small signpost.",
     "original": "20251203_142256.jpg",
     "refs": [
-      "calendar.html",
-      "Gallery.html"
+      "Gallery.html",
+      "calendar.html"
     ],
     "width": 1600,
     "height": 1242,
@@ -371,8 +371,8 @@
     "alt": "Woman standing upright with her back against a wall during a posture exercise.",
     "original": "20260810_133003.jpg",
     "refs": [
-      "balance_posture_gait.html",
-      "Gallery.html"
+      "Gallery.html",
+      "balance_posture_gait.html"
     ],
     "width": 1200,
     "height": 1600,
@@ -400,8 +400,8 @@
     "alt": "Two women reclining on pink exercise mats with knees bent.",
     "original": "20250509_103027.jpg",
     "refs": [
-      "balance_posture_gait.html",
-      "Gallery.html"
+      "Gallery.html",
+      "balance_posture_gait.html"
     ],
     "width": 1600,
     "height": 1200,
@@ -460,8 +460,8 @@
     "alt": "Purple wildflowers growing beside tall grasses.",
     "original": "20250611_192952.jpg",
     "refs": [
-      "about_me.html",
       "Gallery.html",
+      "about_me.html",
       "walk_with_me_wednesdays.html"
     ],
     "width": 1600,
@@ -520,7 +520,7 @@
     "alt": "Two people holding walking poles beside a stone wall and roadside grasses.",
     "original": "20240828_101851.jpg",
     "refs": [
-      "Gallery.html (proposed addition)"
+      "Gallery.html"
     ],
     "email": "1930e1582283fe29",
     "width": 1200,
@@ -535,7 +535,7 @@
     "alt": "Woman beside walking poles leaning against the Avondale Farm Preserve stone.",
     "original": "20240911_102457.jpg",
     "refs": [
-      "Gallery.html (proposed addition)"
+      "Gallery.html"
     ],
     "email": "1930e155fc8cba7d",
     "width": 1200,
@@ -550,13 +550,15 @@
     "alt": "Seven Nordic walkers in orange safety vests standing on a woodland footbridge.",
     "original": "20261111_112119.jpg",
     "refs": [
-      "Gallery.html (proposed addition)"
+      "Gallery.html"
     ],
-    "email": "1a1cfd1cbd114d02",
+    "email": "1a1d6e6c62ed29cd",
     "width": 1600,
     "height": 1104,
     "source_archive": "img/originals/20261111_112119.jpg",
-    "sha256": "9ae5d1bff4abf6671f40fdb3892f07d1f32a6da181b243076346e927f83a5718"
+    "sha256": "9ae5d1bff4abf6671f40fdb3892f07d1f32a6da181b243076346e927f83a5718",
+    "alternate_source_archive": "img/originals/20261111_112119-1a1cfd1cbd114d02.jpg",
+    "alternate_email": "1a1cfd1cbd114d02"
   },
   {
     "number": 39,
@@ -565,7 +567,7 @@
     "alt": "Three walkers in orange safety vests studying a trail map beneath a Grills sign.",
     "original": "20261111_115236.jpg",
     "refs": [
-      "Gallery.html (proposed addition)"
+      "Gallery.html"
     ],
     "email": "1a1cfd1eb1c801d2",
     "width": 1600,
@@ -576,31 +578,34 @@
   {
     "number": 40,
     "old": "IMG_20261118_124306.heic",
-    "new": "glacier-park-green-trail-pond.jpg",
-    "alt": "Pond seen through leafless trees along the Green trail at Glacier Park.",
+    "new": "glacier-park-green-trail.webp",
+    "alt": "Pond seen through leafless trees along the Green Trail at Glacier Park.",
     "original": "IMG_20261118_124306.heic",
     "refs": [
-      "Gallery.html (proposed addition)"
+      "Gallery.html",
+      "walk_with_me_wednesdays.html"
     ],
     "email": "1a1efc2951a6a622",
     "width": 1200,
     "height": 1600,
     "source_archive": "img/originals/IMG_20261118_124306.heic",
-    "sha256": "75f22309c6bc25c88b81e775ec4a28858494aa4ffbfaeee4fe1209a32ef3359b"
+    "sha256": "0182e7b3e915460097e223b735740031e81ae66f96a4c1bb38fc9930ed5309bd",
+    "previous_web": "img/web/glacier-park-green-trail-pond.jpg"
   },
   {
     "number": 41,
     "old": "4414354569634525150.jpg",
-    "new": "water-strider-glacier-park-identification-image.jpg",
+    "new": "glacier-park-water-strider.webp",
     "alt": "Water strider identification image labeled Common Water Strider, Gerris remigis.",
     "original": "4414354569634525150.jpg",
     "refs": [
-      "Gallery.html (proposed addition)"
+      "Gallery.html"
     ],
     "email": "1a1f44d378d22762",
     "width": 904,
     "height": 961,
     "source_archive": "img/originals/4414354569634525150.jpg",
-    "sha256": "0380811e80549698ff38521857f9d502f27759e24e80787034036d3c35503ca6"
+    "sha256": "2e0808b1de3462a0418a378d8e60ef396623c5e95c4a7cd16cd8c95986062982",
+    "previous_web": "img/web/water-strider-glacier-park-identification-image.jpg"
   }
 ]

@@ -1,6 +1,8 @@
 # Gallery photo inventory
 
-Approved and implemented locally on 2026-11-19. Not deployed. The gallery contains 41 unique photographs; the two video posters are inventoried separately below. Every existing media file is preserved, and all 41 photo originals are archived in `img/originals/` (excluded from static uploads). Existing web filenames are retained for compatibility; active page references use the canonical names.
+The 41-image gallery approved on November 19 was verified live on November 22. The two Glacier Park WebP replacements and the walking-location card are local changes. The two video posters are inventoried separately below. The source archive at `img/originals/` is excluded from static uploads, and prior web copies are retained for existing links.
+
+Canonical filenames in the table are relative to `img/web/`. For rows 1–35, the previous filenames also resolve under `img/web/`. Rows 36–41 list incoming filenames alongside their archived paths. The [JSON inventory](gallery-photo-inventory.json) lists every HTML reference in each entry's `refs` array.
 
 | # | Previous web filename / incoming filename | Canonical web filename | Original source | Alt text |
 | --- | --- | --- | --- | --- |
@@ -43,8 +45,13 @@ Approved and implemented locally on 2026-11-19. Not deployed. The gallery contai
 | 37 | `20240911_102457.jpg` | `nordic-walker-and-poles-at-avondale-stone.jpg` | `img/originals/20240911_102457.jpg` | Woman beside walking poles leaning against the Avondale Farm Preserve stone. |
 | 38 | `20261111_112119.jpg` | `nordic-walkers-orange-vests-on-footbridge.jpg` | `img/originals/20261111_112119.jpg` | Seven Nordic walkers in orange safety vests standing on a woodland footbridge. |
 | 39 | `20261111_115236.jpg` | `nordic-walkers-at-grills-trail-map.jpg` | `img/originals/20261111_115236.jpg` | Three walkers in orange safety vests studying a trail map beneath a Grills sign. |
-| 40 | `IMG_20261118_124306.heic` | `glacier-park-green-trail-pond.jpg` | `img/originals/IMG_20261118_124306.heic` | Pond seen through leafless trees along the Green trail at Glacier Park. |
-| 41 | `4414354569634525150.jpg` | `water-strider-glacier-park-identification-image.jpg` | `img/originals/4414354569634525150.jpg` | Water strider identification image labeled Common Water Strider, Gerris remigis. |
+| 40 | `IMG_20261118_124306.heic` | `glacier-park-green-trail.webp` | `img/originals/IMG_20261118_124306.heic` | Pond seen through leafless trees along the Green Trail at Glacier Park. |
+| 41 | `4414354569634525150.jpg` | `glacier-park-water-strider.webp` | `img/originals/4414354569634525150.jpg` | Water strider identification image labeled Common Water Strider, Gerris remigis. |
+
+| Previous web path | Current local web path | HTML references |
+| --- | --- | --- |
+| `img/web/glacier-park-green-trail-pond.jpg` | `img/web/glacier-park-green-trail.webp` | `Gallery.html`, `walk_with_me_wednesdays.html` |
+| `img/web/water-strider-glacier-park-identification-image.jpg` | `img/web/glacier-park-water-strider.webp` | `Gallery.html` |
 
 ## Other gallery image uses
 
@@ -57,7 +64,7 @@ Approved and implemented locally on 2026-11-19. Not deployed. The gallery contai
 - All 12 November 5 gallery photos remain. Two emails carrying `20231113_110009.jpg` have identical SHA-256 hashes, so there is one photo entry.
 - Restored `20240828_101851.jpg` and `20240911_102457.jpg` from Julie's November 8, 2024 gallery emails. The second shows a woman beside the Avondale stone and is distinct from the existing poles-only photo.
 - Added `20261111_112119.jpg` and `20261111_115236.jpg` from the November 12–13 photo batch, as approved. The two footbridge attachments are the same photograph with different crops: the November 13 crop is displayed once, and the wider November 12 file is preserved as `img/originals/20261111_112119-1a1cfd1cbd114d02.jpg`.
-- Converted `IMG_20261118_124306.heic` to a web JPEG and retained the original HEIC. Its figure immediately precedes the water-strider figure in one unbreakable column group.
+- Converted the archived `IMG_20261118_124306.heic` directly to WebP for the gallery and walking-location card. Its gallery figure immediately precedes the water-strider figure in one unbreakable column group.
 - `4414354569634525150.jpg` is an identification image with printed text. Its alt text describes that image; the visible caption is exactly “Water Strider found at Glacier Park”.
 - The similar Champlin woodland views and autumn walking-group views are separate photographs and remain separate entries.
 
@@ -65,12 +72,12 @@ Approved and implemented locally on 2026-11-19. Not deployed. The gallery contai
 
 - `20261007_132646.jpg` (YMCA group) has no confirmed gallery placement and is not part of the approved 41.
 - Ambient music/nature sounds remain an optional question without a selected audio file.
-- `20261111_113606.mp4` and the two Drive links named `20261111_115305.mp4` remain pending media reconciliation. The older `20241120_101802.mp4` also has not been reconciled to the current derived videos. Do not mark them complete from this photo inventory.
+- The November 12 “Changes and pics” email has an 8,465,989-byte `20261111_113606.mp4` attachment and no placement instructions. The two `20261111_115305.mp4` links have different Drive file IDs. One is a 133,166,763-byte MP4 and the other returned 404 through the connected account, so their content could not be compared. Placement for the November clips and the match for the older `20241120_101802.mp4` remain open.
 - Shared news article links are not explicit requests to publish articles.
 
 ## Validation
 
-See the November 19 entry in `vault/Project Log.md` for the completed local checks. The prior live audit found 35 photos loading at desktop and mobile sizes; the expanded 41-photo gallery has not been deployed.
+On November 22 all 41 archived images were visually matched against their local web copies. The two footbridge crops show the same frame, and the similar Champlin Farm and autumn walking-group views are separate captures. At desktop (1267 × 943) and mobile (390 × 844), all 41 images loaded with alt text on both local and live pages. The local WebP pair stayed together in order with the exact caption. The live pair still uses the previous JPEG paths. All 317 local HTML references resolved.
 
 
 ### Local checks completed — November 19

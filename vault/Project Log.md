@@ -58,3 +58,10 @@ Prepared the vault and root agent instructions for main at the user’s request.
 - Browser QA passed at desktop 1267 × 943 and mobile 390 × 844: all 41 photos loaded, the pair stayed consecutive in one column, and neither layout overflowed horizontally. Recorded the full mapping and source provenance in `docs/gallery-photo-inventory.md` and JSON.
 - Corrected the calendar note: the earlier live audit now shows 11:00 AM for all four November walks, rather than the older recorded all-day display. Calendar data was not changed. Carried the optional YMCA photo, ambient-audio question and unreconciled video emails into Tasks.
 - No commit, push or deployment was performed. Google Sheets/email remains user-confirmed working in production; no registrations were submitted.
+
+## 2026-11-22 — Glacier Park local update and live media audit
+
+- Converted the archived Glacier Park HEIC directly to WebP and reused it on [[Wednesday Walks]] and in [[Gallery]]. Added the new walking location with a Westerly Land Trust link. Converted the water-strider image to WebP and verified its exact caption and position after the park photo.
+- Matched all 41 gallery images visually to their originals, including the two crops of one footbridge photo. Updated the path mapping and HTML references. Desktop and mobile checks loaded all 41 images with alt text on both local and live pages. All 317 local HTML references resolved.
+- Confirmed live that the 41-image gallery is already present with the JPEG pair. Verified the November 5 navigation, location, gallery and biography updates. Both live gallery videos decoded, and the Wednesday walking clip is separate from the group photo and has no audio stream.
+- Recorded both November video links and the email attachment in the inventory. One Drive link returned 404. The blue pinnie mockup is with the steering committee and website logo placement is open. The November 22 page changes are local.
